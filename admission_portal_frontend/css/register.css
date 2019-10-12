@@ -285,15 +285,8 @@
     padding: 0 2px;
   }
 
-  .input100 []{
-    display: block;
-    width: 100%;
-    height: 40px;
-    background: transparent;
-    font-size: 16px;
-    color: #555555;
-    line-height: 1.2;
-    padding: 0 2px;
+  .input100::placeholder{
+    color: rgba(92, 92, 92, 0.288);
   }
 
 
