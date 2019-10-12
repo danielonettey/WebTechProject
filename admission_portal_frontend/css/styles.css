@@ -786,6 +786,19 @@ a.label:hover, a.label:focus {
   padding: 10px 0 0 0;
   margin: 10px 10px 20px 10px; }
 
+  @media (max-width: 600px) {
+    .picture img{
+      width: 100px;
+    }
+    .picture label{
+      font-size: 17px !important;
+    }
+    .picture p{
+      font-size: 13px !important;
+    }
+  }
+
+
 @media (min-width: 768px) {
   .sidebar {
     display: block;
