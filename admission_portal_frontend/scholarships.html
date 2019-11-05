@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Application - Ashesi Admission</title>
+	<title>Scholarship - Ashesi Admission</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -92,7 +92,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">My application</h1>
+				<h1 class="page-header">Scholarship form</h1>
 			</div>
 		</div>
 		<!--/.row-->
@@ -101,27 +101,172 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default" style="padding-bottom: 30px;">
 					<div class="panel-heading">
-						Personal Information
 						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em
 								class="fa fa-toggle-up"></em></span></div>
 					<div class="panel-body">
 						<form class="form-horizontal" action="" method="post">
 							<div class="col-lg-12">
+								<h5>Tuition and Fees for the semester</h5>
+								<p>Indicate how much your family / sponsor /
+									guardian can contribute per semester</p>
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">First Name</label>
+											<label class="col-md-12 control-label" for="name">Tuition and Books</label>
 											<div class="col-md-12">
-												<input id="fname" name="fname" type="text" placeholder="Your first name"
+												<input id="fname" name="fname" type="number" placeholder=""
 													class="form-control">
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Last Name</label>
+											<label class="col-md-12 control-label" for="name">On campus housing
+												(optional)</label>
 											<div class="col-md-12">
-												<input id="lname" name="lname" type="text" placeholder="Your last name"
+												<input id="fname" name="fname" type="number" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Medical insurance ((fee is
+												paid once for the year and can only be
+												waived with proof of other private
+												medical insurance))</label>
+											<div class="col-md-12">
+												<input id="lname" name="lname" type="number" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+								<div style="padding-left: 15px;">
+									<p>All fees are subject to review each semester, and are payable in Ghana Cedi (GHs)
+										equivalent.</p>
+									<p>i. The expectation is that your family will pay approximately this same amount (
+										adjusted for information) every semester over the next 4 years.</p>
+									<p>ii. Applicants are considered on the basis of documented financial need and upon
+										a
+										thorough assessment by
+										Ashesi Scholarship Committee of all information gathered during the admissions
+										process for each candidate.</p>
+									<p>iii. Most scholarship awards vary, based on demonstrated need, academic merit and
+										availability of funds.
+										Scholarships may be either full or partial to cover specific items as stated in
+										the admissions offer letter.</p>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<h5>Please provide responses to the following questions</h5>
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">1a. Who paid for your
+												previous schooling?:</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">1b. Relationship to
+												you:</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">2. Will you receive any
+												scholarships that will contribute toward your Ashesi education? If yes,
+												please state
+												the name of the organization providing the scholarship, the amount and
+												the duration of the
+												scholarship (one-time scholarship, 2 year, etc.)</label>
+											<div class="col-md-12">
+												<textarea class="form-control" id="message" name="message"
+													placeholder="" rows="5"></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<!-- Household Dependents -->
+
+							<div class="col-lg-12">
+								<h5>Household Dependents</h5>
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">3. How many people,
+												including yourself, depend on the income of your parents/guardians for
+												their
+												daily living?</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">4. How many people,
+												including yourself, depend on the income of your parents/guardians for
+												their
+												educational costs?</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">5. Provide the full name,
+												age, relation to you, school, year in school, annual tuition and amount
+												parents pay below for all members of your family living in your
+												parents’/guardians’ home,
+												including yourself:</label>
+											<div class="col-md-12">
+												<textarea class="form-control" id="message" name="message"
+													placeholder="full name - age - relation to you - school - year in school - annual tuition - amount parents pay"
+													rows="5"></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<!-- Family Income -->
+
+							<div class="col-lg-12">
+								<h5>Family Income</h5>
+								<p>6. Please provide details for your family’s yearly income from all sources (in
+									dollars).</p>
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Yearly income from first
+												head of household</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Yearly income from second
+												head of household</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
 													class="form-control">
 											</div>
 										</div>
@@ -129,52 +274,551 @@
 								</fieldset>
 							</div>
 							<div class="col-lg-12">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">Yearly income from family
+											business(es)</label>
+										<div class="col-md-12">
+											<input id="email" name="email" type="number" placeholder="$"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">Yearly income from
+											investments</label>
+										<div class="col-md-12">
+											<input id="email" name="email" type="number" placeholder="$"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">Yearly income from
+											pension/retirement funds</label>
+										<div class="col-md-12">
+											<input id="email" name="email" type="number" placeholder="$"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">Yearly income from
+											relative(s)</label>
+										<div class="col-md-12">
+											<input id="email" name="email" type="number" placeholder="$"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">Total Amount (in
+											dollars)</label>
+										<div class="col-md-12">
+											<input id="email" name="email" type="number" placeholder="$"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">State exchange rate used:
+											$1 =__________)</label>
+										<div class="col-md-12">
+											<input id="email" name="email" type="number" placeholder="$"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div class="form-group">
+										<label class="col-md-12 control-label" for="name">7. Do you expect
+											significant increases or decreases in your parents’/guardians’ income
+											during 2019? If yes,
+											please explain why:</label>
+										<div class="col-md-12">
+											<textarea class="form-control" id="message" name="message" placeholder=""
+												rows="5"></textarea>
+										</div>
+
+									</div>
+								</div>
+
+								</fieldset>
+							</div>
+
+							<!-- Family Expense -->
+
+							<div class="col-lg-12">
+								<h5>Family Expense</h5>
+								<p>8. Tell us, to the best of your ability, how much your family spends per year to meet
+									its household living
+									expenses. Specic categories are provided below.</p>
 								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for
+												rent/mortgage</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for food</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for taxes</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for public
+												transportation</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for fuel</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for utility
+												bills</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for School
+												fees</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for Medical
+												bills</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for Health
+												Insurance</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for House
+												help</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for
+												entertainment</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Amount for
+												vacations</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Total Amount</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder="$"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">9. If family expenses
+												exceed monthly income, please explain how expenses were met:</label>
+											<div class="col-md-12">
+												<textarea class="form-control" id="message" name="message"
+													placeholder="" rows="5"></textarea>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<!-- Assest & Debts -->
+
+							<div class="col-lg-12">
+								<h5>Assest & Debts</h5>
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">10. Does your family have
+												deed to land or a land certificate at time of application?</label>
+											<div class="col-md-12">
+												<div class="radio">
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios1"
+															value="option1">Yes
+													</label>
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios3"
+															value="option2">No
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">11. Does your family own
+												its
+												own home?</label>
+											<div class="col-md-12">
+												<div class="radio">
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios1"
+															value="option1">Yes
+													</label>
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios3"
+															value="option2">No
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="col-lg-12">
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">12. Is your family
+												currently
+												constructing a house?</label>
+											<div class="col-md-12">
+												<div class="radio">
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios1"
+															value="option1">Yes
+													</label>
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios3"
+															value="option2">No
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">13. What is your roof made
+												up
+												of? </label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">14. Does your household
+												have
+												electricity?</label>
+											<div class="col-md-12">
+												<div class="radio">
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios1"
+															value="option1">Yes
+													</label>
+													<label>
+														<input type="radio" name="optionsRadios" id="optionsRadios3"
+															value="option2">No
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">15. How many vehicles do
+												your parents/guardians own?</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="number" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="col-lg-12">
+								<fieldset>
+									<label class="control-label" for="name">16. Please tell us the make (e.g. Honda,
+										Toyota, etc.), model (e.g. Civic, Prado, etc.) and year of each car you
+										own in the space provided below:</label>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">First Vehicle</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Second Vehicle</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Third Vehicle</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Fourth Vehicle</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Other household
+												assets</label>
+											<div class="col-md-12">
+												<div style="display: flex; flex-direction: row;">
+													<div class="col-md-6">
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Mobile Phone(s)
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Computer
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Radio
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Other:
+															</label>
+															<input type="text">
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Bicycle
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Motorcycle
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" value="">Television
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+
+							<div class="col-lg-12">
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">17. Does your family have
+												any
+												debts? If yes, how much?</label>
+											<div class="col-md-12">
+												<input id="phone" name="number" type="tel" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">18. For what purpose was
+												this
+												debt incurred?</label>
+											<div class="col-md-12">
+												<input id="ophone" name="ophone" type="text"
+													placeholder="Your mobile phone" class="form-control">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<!-- References -->
+
+							<div class="col-lg-12">
+								<h5>References</h5>
+								<p>Provide the name and contact details of two references. Do not include relatives.</p>
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Name</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Address</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Phone</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Email</label>
 											<div class="col-md-12">
-												<input id="email" name="email" type="email" placeholder="Your email"
+												<input id="email" name="email" type="email" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="col-lg-12">
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Name</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Gender</label>
+											<label class="col-md-12 control-label" for="name">Address</label>
 											<div class="col-md-12">
-												<select class="form-control">
-													<option>Select a gender</option>
-													<option>Male</option>
-													<option>Female</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Mobile Phone</label>
-											<div class="col-md-12">
-												<input id="phone" name="phone" type="tel"
-													placeholder="Your mobile phone" class="form-control">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Other Mobile Phone</label>
+											<label class="col-md-12 control-label" for="name">Phone</label>
 											<div class="col-md-12">
-												<input id="ophone" name="ophone" type="tel"
-													placeholder="Your mobile phone" class="form-control">
+												<input id="email" name="email" type="text" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Email</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="email" placeholder=""
+													class="form-control">
 											</div>
 										</div>
 									</div>
 								</fieldset>
 							</div>
+
+
+
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
@@ -399,8 +1043,9 @@
 											<div class="col-md-12">
 												<div>
 													<button type="button" class="btn btn-md btn-primary">
-														<a href="scholarships.html"
-															style="text-decoration:none; color:white;">Save and Apply for a
+														<a href="scholarship.html"
+															style="text-decoration:none; color:white;">Save and Apply
+															for a
 															Scholarship</a></button>
 												</div>
 											</div>
@@ -1649,7 +2294,8 @@
 							<div class="col-lg-12">
 								<div style="display: flex;justify-content: flex-end;width:100%;">
 									<button type="button" class="btn btn-md btn-primary"
-										style="margin-right: 10px;">Save and Close</button>
+										style="margin-right: 10px;">Save
+										and Close</button>
 									<button type="button" class="btn btn-md btn-primary">Submit</button>
 								</div>
 							</div>
