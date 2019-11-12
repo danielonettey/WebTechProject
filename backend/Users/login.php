@@ -22,18 +22,16 @@ if (isset($_GET['login_user'])){
 $stmt = $user->login();
 
 if ($stmt->num_rows > 0){
-    $user_arr=array(
-        "status" => true,
-        "message" => "Successfully LogedIN",
-        "username" => $stmt->fetch_all()
-    );
+    $result = $stmt->fetch_array();
+    session_start();
+    $_SESSION['user_id']= $result[0];
+    $_SESSION['user_name'] = $result[1];
+    header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/");
+    
 }else{
-    $user_arr=array(
-        "status" => false,
-        "message" => "User not found!"
-    );
+    header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/");
 }
 
-print_r(json_encode($user_arr));
+
 
 ?>

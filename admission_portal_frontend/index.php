@@ -20,6 +20,13 @@
 </head>
 
 <body>
+<?php
+	session_start();
+	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
+		header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/log_in.php");
+		die();
+	}
+	?>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -73,7 +80,7 @@
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-comments">&nbsp;</em> FAQs</a></li>
 			<li class="active"><a href="contact.html"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
-			<li><a href="log_in.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="../backend/Users/logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>
 

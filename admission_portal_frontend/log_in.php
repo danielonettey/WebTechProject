@@ -61,7 +61,7 @@
                     <div class="container-login100-form-btn" style="padding-top: 20px;width: 100%;">
                         <div class="wrap-login100-form-btn" style="width:100%;text-align: center;">
                             <div class="login100-form-bgbtn"></div>
-                            <button type="submit" name="login_user" class="login100-form-btn" style="width:100%;">Sign Up</button>
+                            <button type="submit" name="login_user" class="login100-form-btn" style="width:100%;">Login</button>
                      
                         </div>
                         <span class="txt1 p-t-10" style="margin-top:10px;margin-left: auto;margin-right: auto;">
