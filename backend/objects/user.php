@@ -6,6 +6,7 @@ class User{
     private $table_name = "user";
 
     //Object properties
+    public $id;
     public $studentId;
     public $fullname;
     public $email;
@@ -18,6 +19,7 @@ class User{
         $this->conn = $db;
     }
     
+
     //signup user
     function signup(){
         if($this->isAlreadyExist()){

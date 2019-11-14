@@ -21,6 +21,25 @@
 </head>
 
 <body>
+<?php
+	session_start();
+	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
+		header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/log_in.php");
+		die();
+	}
+	include_once("../backend/mydatabase.php");
+	include_once('../backend/profilecrud.php'); 
+	
+
+	$database_connection = new Database();
+	$db = $database_connection->getconnecion();
+	
+
+	
+	$result = readall($db);
+
+
+	?>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -57,7 +76,7 @@
 				<img src="img/caleb.jpg" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Wuremu</div>
+				<div class="profile-usertitle-name"><?php echo $result[1] ?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -74,7 +93,7 @@
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-comments">&nbsp;</em> FAQs</a></li>
 			<li class="active"><a href="contact.html"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
-			<li><a href="log_in.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="../backend/Users/logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>
 	<!--/.sidebar-->
@@ -113,37 +132,14 @@
 								<p class="help-block">File chosen should be .jpg, .png or .jpeg</p>
 							</div>
 						</div>
-						<form class="form-horizontal" action="" method="post">
+						<form class="form-horizontal" action="../backend/profilecrud.php?id=<?php echo $result[0] ?>" method="POST">
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">First Name</label>
+											<label class="col-md-12 control-label" for="name">Full Name</label>
 											<div class="col-md-12">
-												<input id="fname" name="fname" type="text" placeholder="Your first name"
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Middle Name</label>
-											<div class="col-md-12">
-												<input id="fname" name="fname" type="text" placeholder="Your middle name"
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Last Name</label>
-											<div class="col-md-12">
-												<input id="fname" name="fname" type="text" placeholder="Your last name"
+												<input id="fname" name="fullname" type="text" placeholder=<?php echo $result[1] ?>
 													class="form-control">
 											</div>
 										</div>
@@ -152,7 +148,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Gender</label>
 											<div class="col-md-12">
-												<select class="form-control">
+												<select class="form-control" name="gender">
 													<option>Select a gender</option>
 													<option>Male</option>
 													<option>Female</option>
@@ -160,15 +156,17 @@
 											</div>
 										</div>
 									</div>
+									
 								</fieldset>
 							</div>
+
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Email</label>
 											<div class="col-md-12">
-												<input id="email" name="email" type="email" placeholder="Your email"
+												<input id="email" name="email" type="email" placeholder=<?php echo $result[2] ?>
 													class="form-control">
 											</div>
 										</div>
@@ -178,7 +176,7 @@
 											<label class="col-md-12 control-label" for="name">Mobile Phone</label>
 											<div class="col-md-12">
 												<input id="phone" name="phone" type="tel"
-													placeholder="Your mobile phone" class="form-control">
+													placeholder=<?php echo $result[3] ?>  class="form-control">
 											</div>
 										</div>
 									</div>
@@ -200,8 +198,8 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Country</label>
 											<div class="col-md-12">
-												<select class="form-control">
-													<option>Select your Country</option>
+												<select class="form-control" name="country">
+													<option><?php echo $result[4] ?></option>
 													<option>Ghana</option>
 													<option>Canada</option>
 													<option>Congo</option>
@@ -214,8 +212,9 @@
 							</div>
 
 							<div class="row">
-								<div class="col-md-12 buttonCont" style="margin-top: 30px;margin-right: 30px;">
-									<a href="index.html">Apply Changes</a>
+								<div  style="margin-top: 30px;margin-right: 30px;">
+								<button type="submit" name="updateprofile" class=" buttonCont">Update </button>
+
 								</div>
 							</div>
 						</form>

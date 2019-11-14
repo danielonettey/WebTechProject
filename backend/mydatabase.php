@@ -25,7 +25,7 @@ class Database
               if($this->connection->connect_error){
                   error_log("Database not created " . $this->connection->connect_error);
               }else{
-                  echo("Data base connected" .' </br> ');
+                  echo("Database connected" .' </br> ');
               }
             return $this->connection;
         }

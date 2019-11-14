@@ -63,7 +63,7 @@
 				<img src="img/caleb.jpg" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Wuremu</div>
+				<div class="profile-usertitle-name"><?php $_SESSION['user_name'] ?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -71,7 +71,7 @@
 		<div class="divider"></div>
 		<br>
 		<ul class="nav menu">
-			<li class="active"><a href="profile.html"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
+			<li class="active"><a href="profile.php"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
 			<li class="active"><a href="application.html"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
 			</li>
 			<li class="active"><a href="deadlines.html"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
