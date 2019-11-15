@@ -23,7 +23,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/log_in.php");
+		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
 		die();
 	}
 	?>
