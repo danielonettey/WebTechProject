@@ -14,6 +14,8 @@ class User{
     public $country;
     public $password;
     public $created;
+    public $progress;
+    public $status = "New Applicant";
 
     public function __construct($db){
         $this->conn = $db;
@@ -40,16 +42,39 @@ class User{
          $this->country = htmlspecialchars(strip_tags($this->country));
          $this->password = htmlspecialchars(strip_tags($this->password));
          $this->created = htmlspecialchars(strip_tags($this->created));
-
-
+         $this->progress = 0;
+         $result = $this->login();
+         $result = $result->fetch_array();
+         echo "fchgcghg".$result[1];
+        $this->studentId = $result[0];
          //execute query
          if($stmt->execute()){
+            
              return true;
          }
          return false;
 
 
     
+    }
+
+    function applicant(){
+        
+        //Query to insert user profile into databse
+        $query = "INSERT INTO applicationdata (studentId,datecreated,progress,lastedited,appstatus) VALUES (?,?,?,?,?)";
+        $stmt2 = $this->conn->prepare($query);
+        $stmt2->bind_param("sssss",$this->studentId,$this->created,$this->progress,$this->created,$this->status);
+        if($stmt2->execute()){
+            $this->applicant();
+             echo "done";
+             return true;
+         }else{
+             $this->conn->error;
+         }
+
+         echo "not done";
+
+
     }
 
 

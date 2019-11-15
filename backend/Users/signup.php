@@ -33,6 +33,7 @@ if (isset($_POST['register_user'])){
 
 //create the user
 if($user->signup()){
+    $user->applicant();
     $user_arr=array(
         "status" => true,
         "message" => "Successfully Signup!",
