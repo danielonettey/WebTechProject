@@ -212,9 +212,14 @@
 							</div>
 
 							<div class="row">
-								<div  style="margin-top: 30px;margin-right: 30px;">
-								<button type="submit" name="updateprofile" class=" buttonCont">Update </button>
-
+								<div class="col-lg-12">
+									<div class="col-lg-12">
+										<div style="display: flex;justify-content: flex-end;width:100%;">
+											<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
+												style="margin-right: 10px;">
+												Update</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</form>
@@ -270,11 +275,14 @@
 													placeholder="************" class="form-control">
 											</div>
 										</div>
-										<div class="buttonCont" style="margin-top: 30px;">
-											<a href="index.php">Apply Changes</a>
-										</div>
 									</div>
 								</fieldset>
+							</div>
+							<div class="col-lg-6">
+								<div style="display: flex;justify-content: flex-end;width:100%;margin-top:10px;">
+									<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont">
+										Apply Changes</button>
+								</div>
 							</div>
 						</form>
 					</div>

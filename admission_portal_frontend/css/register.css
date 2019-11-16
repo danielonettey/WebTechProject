@@ -266,6 +266,13 @@
     border-bottom: 1.2px solid #666666;
     margin-bottom: 20px;
   }
+
+  .wrap-input50 {
+    width: 50%;
+    position: relative;
+    border-bottom: 1.2px solid #666666;
+    margin-bottom: 20px;
+  }
   
   .label-input100 {
     font-size: 16px;
