@@ -33,36 +33,66 @@
                     <span class="login100-form-title p-b-59" style="padding-bottom: 20px;">
                         Sign Up
                     </span>
-
-                    <div class="wrap-input100 validate-input" data-validate="First Name is required">
-                        <span class="label-input100">First Name</span>
-                        <input class="input100" type="text" name="fname" placeholder="">
-                        <span class="focus-input100"></span>
+                <div class="container_fluid" style="width: 100%;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
+                                <span class="label-input100">First Name</span>
+                                <input class="input100" type="text" name="fname" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wrap-input100 validate-input" data-validate="Last Name is required">
+                                <span class="label-input100">Last Name</span>
+                                <input class="input100" type="text" name="lname" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Last name is required">
-                        <span class="label-input100">Last Name</span>
-                        <input class="input100" type="text" name="lname" placeholder="">
-                        <span class="focus-input100"></span>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
+                                <span class="label-input100">Gender</span>
+                                <input class="input100" type="text" name="fname" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wrap-input100 validate-input" data-validate="First Name is required">
+                                <span class="label-input100">Date of Birth</span>
+                                <input class="input100" type="date" name="lname" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <span class="label-input100">Email</span>
-                        <input class="input100" type="text" name="email" placeholder="">
-                        <span class="focus-input100"></span>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                <span class="label-input100">Email</span>
+                                <input class="input100" type="text" name="email" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wrap-input100 validate-input" data-validate="Telephone is required">
+                                <span class="label-input100">Mobile phone</span>
+                                <input class="input100" type="tel" name="phone" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="wrap-input100 validate-input" data-validate="Country is required">
+                                <span class="label-input100">Country</span>
+                                <input class="input100" type="country" name="country" placeholder="">
+                                <span class="focus-input100"></span>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>  
 
-                    <div class="wrap-input100 validate-input" data-validate="Telephone is required">
-                        <span class="label-input100">Telephone</span>
-                        <input class="input100" type="phone" name="phone" placeholder="">
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Country is required">
-                        <span class="label-input100">Country</span>
-                        <input class="input100" type="country" name="country" placeholder="">
-                        <span class="focus-input100"></span>
-                    </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <span class="label-input100">Password</span>
