@@ -84,10 +84,10 @@
 		<div class="divider"></div>
 		<br>
 		<ul class="nav menu">
-			<li class="active"><a href="profile.html"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
-			<li class="active"><a href="application.html"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
+			<li class="active"><a href="profile.php"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
+			<li class="active"><a href="application.php"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
 			</li>
-			<li class="active"><a href="deadlines.html"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
+			<li class="active"><a href="deadlines.php"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-info-circle">&nbsp;</em> About Us</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em

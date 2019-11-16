@@ -19,7 +19,13 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 </head>
-
+<?php
+	session_start();
+	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
+		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
+		die();
+	}
+	?>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
@@ -65,16 +71,16 @@
 		<div class="divider"></div>
 		<br>
 		<ul class="nav menu">
-			<li class="active"><a href="profile.html"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
-			<li class="active"><a href="application.html"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
+			<li class="active"><a href="profile.php"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
+			<li class="active"><a href="application.php"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
 			</li>
-			<li class="active"><a href="deadlines.html"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
+			<li class="active"><a href="deadlines.php"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-info-circle">&nbsp;</em> About Us</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-comments">&nbsp;</em> FAQs</a></li>
 			<li class="active"><a href="contact.html"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
-			<li><a href="log_in.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="log_in.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>
 	<!--/.sidebar-->
