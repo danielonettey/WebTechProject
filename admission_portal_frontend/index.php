@@ -26,6 +26,18 @@
 		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
 		die();
 	}
+
+	include_once("../backend/mydatabase.php");
+	include_once('../backend/profilecrud.php'); 
+	
+
+	$database_connection = new Database();
+	$db = $database_connection->getconnecion();
+	
+
+	
+	$result = readall($db);
+
 	?>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
@@ -63,7 +75,7 @@
 				<img src="img/caleb.jpg" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name"><?php $_SESSION['user_name'] ?></div>
+				<div class="profile-usertitle-name"><?php echo $result[1] ?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -72,9 +84,9 @@
 		<br>
 		<ul class="nav menu">
 			<li class="active"><a href="profile.php"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
-			<li class="active"><a href="application.html"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
+			<li class="active"><a href="application.php"><em class="fa fa-dashboard">&nbsp;</em> My Application</a>
 			</li>
-			<li class="active"><a href="deadlines.html"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
+			<li class="active"><a href="deadlines.php"><em class="fa fa-calendar">&nbsp;</em> Deadlines & Info</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-info-circle">&nbsp;</em> About Us</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
@@ -129,8 +141,8 @@
 							</div>
 							<div class="row" style="margin-top: 60px;">
 								<div class="col-md-12 buttonCont">
-									<a href="application.html">Start New Application</a>
-									<a href="application.html">Continue Application</a>
+									<a href="application.php">Start New Application</a>
+									<a href="application.php">Continue Application</a>
 								</div>
 							</div>
 						</div>

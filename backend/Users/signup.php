@@ -31,21 +31,13 @@ if (isset($_POST['register_user'])){
 
 }
 
-//create the user
+//create the user and application
 if($user->signup()){
     $user->applicant();
-    $user_arr=array(
-        "status" => true,
-        "message" => "Successfully Signup!",
-        "username" => $user->fullname
-    );
+    header("Location: http://localhost/WebTechProject/admission_portal_frontend/");
 }else{
-    $user_arr=array(
-        "status" => false,
-        "message" => "Username already exists!"
-    );
+    header("Location: http://localhost/WebTechProject/admission_portal_frontend/register.php");
 }
-print_r(json_encode($user_arr));
 
 
 ?>

@@ -43,13 +43,13 @@ class User{
          $this->password = htmlspecialchars(strip_tags($this->password));
          $this->created = htmlspecialchars(strip_tags($this->created));
          $this->progress = 0;
-         $result = $this->login();
-         $result = $result->fetch_array();
-         echo "fchgcghg".$result[1];
-        $this->studentId = $result[0];
+
          //execute query
          if($stmt->execute()){
-            
+            $result = $this->login();
+            $aa = $result->fetch_array();
+            echo "fchgcghg".$aa[0];
+           $this->studentId = $aa[0];
              return true;
          }
          return false;
@@ -65,14 +65,9 @@ class User{
         $stmt2 = $this->conn->prepare($query);
         $stmt2->bind_param("sssss",$this->studentId,$this->created,$this->progress,$this->created,$this->status);
         if($stmt2->execute()){
-            $this->applicant();
-             echo "done";
              return true;
-         }else{
-             $this->conn->error;
          }
-
-         echo "not done";
+         return false;
 
 
     }
