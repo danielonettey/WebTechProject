@@ -27,7 +27,7 @@
         <div class="container-login100">
           
 
-            <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50" style="padding-bottom: 40px; padding-top:40px;">
+            <div class="wrap-login100 strechh p-l-50 p-r-50 p-t-72 p-b-50" style="padding-bottom: 40px; padding-top:40px;">
 
                 <!--Form for signup page -->
                 <form action="../backend/Users/signup.php" method="POST" class="login100-form validate-form">

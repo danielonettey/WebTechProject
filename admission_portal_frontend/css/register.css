@@ -193,7 +193,7 @@
   
   
   .wrap-login100 {
-    width: 700px;
+    width: 520px;
     height: auto;
     background: #fff;
     border-radius: 10px;
@@ -202,6 +202,12 @@
     margin-left: auto;
     box-shadow: 3px 4px #0000005b;
   }
+
+  .strechh{
+    width: 700px;
+  }
+
+  
   
   /*------------------------------------------------------------------
   [ Login100 more ]*/
