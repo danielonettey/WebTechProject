@@ -35,7 +35,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="index.html"><span>Ashesi</span> Admission</a>
+				<a class="navbar-brand" href="index.php"><span>Ashesi</span> Admission</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 							<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -359,17 +359,11 @@
 								<div class="col-lg-12">
 									<br>
 									<div style="display: flex;justify-content: flex-end;width:100%;">
-										<!-- <a href="application1.html" style="text-decoration:none; color:white;"> -->
 										<button type="button" id="" class="btn btn-md btn-primary"
 											style="margin-right: 10px;">
 											Save</button>
-
-										<!-- </a> -->
-
-										<!-- <a href="forms.html" style="text-decoration:none; color:white;"> -->
 										<button type="button" id="scholarship_btn" class="btn btn-md btn-primary">
 											Next</button>
-										<!-- </a> -->
 									</div>
 								</div>
 
@@ -450,10 +444,6 @@
 							});
 						});
 					});
-					extracurricular_info
-
-
-
 				});
 			});
 		}

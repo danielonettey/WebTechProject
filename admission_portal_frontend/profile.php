@@ -48,7 +48,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="index.html"><span>Ashesi</span> Admission</a>
+				<a class="navbar-brand" href="index.php"><span>Ashesi</span> Admission</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 							<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -271,7 +271,7 @@
 											</div>
 										</div>
 										<div class="buttonCont" style="margin-top: 30px;">
-											<a href="index.html">Apply Changes</a>
+											<a href="index.php">Apply Changes</a>
 										</div>
 									</div>
 								</fieldset>
