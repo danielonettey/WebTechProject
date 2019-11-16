@@ -66,7 +66,7 @@
                         </div>
                         <span class="txt1 p-t-10" style="margin-top:10px;margin-left: auto;margin-right: auto;">
                             Dont have an account?
-                            <a href="register.html" class="txt2 hov1">
+                            <a href="register.php" class="txt2 hov1">
                                 Sign up
                             </a>
                         </span>

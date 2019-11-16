@@ -9,7 +9,7 @@ class Database
         //database connection variables
         private  $servername = "localhost";
         private  $username = "root";
-        private  $password = ",./5mm1nu5l15";
+        private  $password = "";
         private  $dbname = "admissionsdatabase";
         public $connection = null;
     /**
