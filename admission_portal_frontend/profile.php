@@ -139,7 +139,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Full Name</label>
 											<div class="col-md-12">
-												<input id="fname" name="fullname" type="text" placeholder=<?php echo $result[1] ?>
+												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
 													class="form-control">
 											</div>
 										</div>
@@ -166,7 +166,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Email</label>
 											<div class="col-md-12">
-												<input id="email" name="email" type="email" placeholder=<?php echo $result[2] ?>
+												<input id="email" name="email" type="email" value=<?php echo $result[2] ?>
 													class="form-control">
 											</div>
 										</div>
@@ -176,7 +176,7 @@
 											<label class="col-md-12 control-label" for="name">Mobile Phone</label>
 											<div class="col-md-12">
 												<input id="phone" name="phone" type="tel"
-													placeholder=<?php echo $result[3] ?>  class="form-control">
+													value=<?php echo $result[3] ?>  class="form-control">
 											</div>
 										</div>
 									</div>

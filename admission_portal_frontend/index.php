@@ -129,7 +129,7 @@
 						<div class="col-md-12 no-padding">
 							<div class="row progress-labels">
 								<div class="col-sm-6">
-									<h3>Current Application Status</h3>
+									<h3><?php echo $result[1] ?></h3>
 								</div>
 								<div class="col-sm-6" style="text-align: right;">
 									<h3>20%</h3>
