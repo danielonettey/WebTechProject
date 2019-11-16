@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select-country.min.css" />
     <link rel="stylesheet" type="text/css" href="css/register.css">
 </head>
 
@@ -33,102 +34,104 @@
                     <span class="login100-form-title p-b-59" style="padding-bottom: 20px;">
                         Sign Up
                     </span>
-                <div class="container_fluid" style="width: 100%;">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
-                                <span class="label-input100">First Name</span>
-                                <input class="input100" type="text" name="fname" placeholder="">
-                                <span class="focus-input100"></span>
+                    <div class="container_fluid" style="width: 100%;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
+                                    <span class="label-input100">First Name</span>
+                                    <input class="input100" type="text" name="fname" placeholder="">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="wrap-input100 validate-input" data-validate="Last Name is required">
+                                    <span class="label-input100">Last Name</span>
+                                    <input class="input100" type="text" name="lname" placeholder="">
+                                    <span class="focus-input100"></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="wrap-input100 validate-input" data-validate="Last Name is required">
-                                <span class="label-input100">Last Name</span>
-                                <input class="input100" type="text" name="lname" placeholder="">
-                                <span class="focus-input100"></span>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
+                                    <span class="label-input100">Gender</span>
+                                    <input class="input100" type="text" name="fname" placeholder="">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="wrap-input100 validate-input" data-validate="First Name is required">
+                                    <span class="label-input100">Date of Birth</span>
+                                    <input class="input100" type="date" name="lname" placeholder="">
+                                    <span class="focus-input100"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
-                                <span class="label-input100">Gender</span>
-                                <input class="input100" type="text" name="fname" placeholder="">
-                                <span class="focus-input100"></span>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <span class="label-input100">Email</span>
+                                    <input class="input100" type="text" name="email" placeholder="">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="wrap-input100 validate-input" data-validate="Telephone is required">
+                                    <span class="label-input100">Mobile phone</span>
+                                    <input class="input100" type="tel" name="phone" placeholder="">
+                                    <span class="focus-input100"></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="wrap-input100 validate-input" data-validate="First Name is required">
-                                <span class="label-input100">Date of Birth</span>
-                                <input class="input100" type="date" name="lname" placeholder="">
-                                <span class="focus-input100"></span>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="wrap-input100 validate-input" data-validate="Country is required">
+                                    <span class="label-input100">Country</span>
+                                    <select class="selectpicker countrypicker input100" data-flag="true" data-default="GH" style="border: 0;"></select>
+                                    <span class="focus-input100"></span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                                <span class="label-input100">Email</span>
-                                <input class="input100" type="text" name="email" placeholder="">
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="wrap-input100 validate-input" data-validate="Telephone is required">
-                                <span class="label-input100">Mobile phone</span>
-                                <input class="input100" type="tel" name="phone" placeholder="">
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="wrap-input100 validate-input" data-validate="Country is required">
-                                <span class="label-input100">Country</span>
-                                <input class="input100" type="country" name="country" placeholder="">
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-                    </div>                     
-                </div>  
+                        </div>  
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                    <span class="label-input100">Password</span>
+                                    <input class="input100" type="password" name="password" placeholder="*************">
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="flex-m w-full p-b-33">
+                                    <div class="contact100-form-checkbox">
+                                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                                        <label class="label-checkbox100" for="ckb1">
+                                            <span class="txt1">
+                                                I agree to the
+                                                <a href="#" class="txt2 hov1">
+                                                    Terms of User
+                                                </a>
+                                            </span>
+                                        </label>
+                                    </div>
 
 
-                    <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <span class="label-input100">Password</span>
-                        <input class="input100" type="password" name="password" placeholder="*************">
-                        <span class="focus-input100"></span>
-                    </div>
+                                </div>
 
-                    <div class="flex-m w-full p-b-33">
-                        <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                            <label class="label-checkbox100" for="ckb1">
-                                <span class="txt1">
-                                    I agree to the
-                                    <a href="#" class="txt2 hov1">
-                                        Terms of User
-                                    </a>
-                                </span>
-                            </label>
-                        </div>
+                                <div class="container-login100-form-btn">
+                                    <div class="wrap-login100-form-btn">
+                                        <div class="login100-form-bgbtn"></div>
+                                        <button type="submit" name="register_user" class="login100-form-btn">Sign Up</button> 
+                                    </div>  
+                                    <div>
+                                        <a href="log_in.php" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                                            Sign in
+                                            <i class="fa fa-long-arrow-right m-l-5"></i>
+                                        </a>
+                                    </div>    
 
-
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        
-                        <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn"></div>
-                            <button type="submit" name="register_user" class="login100-form-btn">Sign Up</button>
-                        
-                   </div>
-               
-                        <a href="log_in.php" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
-                            Sign in
-                            <i class="fa fa-long-arrow-right m-l-5"></i>
-                        </a>
-                    </div>
+                                </div>
+                            </div>
+                        </div>                   
+                    </div>  
                 </form>
             </div>
         </div>
@@ -144,6 +147,7 @@
     <script src="vendor/daterangepicker/daterangepicker.js"></script>
     <script src="vendor/countdowntime/countdowntime.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/bootstrap-select-country.min.js"></script>
 
 </body>
 
