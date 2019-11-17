@@ -55,14 +55,18 @@
                             <div class="col-lg-6">
                                 <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
                                     <span class="label-input100">Gender</span>
-                                    <input class="input100" type="text" name="fname" placeholder="">
+                                    <select class="input100" name= "gender" style="border: 0;">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                    <!-- <input class="input100" type="text" name="gender" placeholder=""> -->
                                     <span class="focus-input100"></span>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="wrap-input100 validate-input" data-validate="First Name is required">
                                     <span class="label-input100">Date of Birth</span>
-                                    <input class="input100" type="date" name="lname" placeholder="">
+                                    <input class="input100" type="date" name="dob" placeholder="">
                                     <span class="focus-input100"></span>
                                 </div>
                             </div>
@@ -87,7 +91,7 @@
                             <div class="col-lg-12">
                                 <div class="wrap-input100 validate-input" data-validate="Country is required">
                                     <span class="label-input100">Country</span>
-                                    <select class="selectpicker countrypicker input100" data-flag="true" data-default="GH" style="border: 0;"></select>
+                                    <select class="selectpicker countrypicker input100" name="country" data-flag="true" data-default="GH" style="border: 0;"></select>
                                     <span class="focus-input100"></span>
                                 </div>
                             </div>

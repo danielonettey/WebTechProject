@@ -9,6 +9,9 @@ class User{
     public $id;
     public $studentId;
     public $fullname;
+    public $lastname;
+    public $gender;
+    public $dob;
     public $email;
     public $phone;
     public $country;
@@ -30,18 +33,22 @@ class User{
         }
 
         //Query to insert user profile into databse
-        $query = "INSERT INTO user (fullname,email,phone,country,pass,created) VALUES (?,?,?,?,?,?)";
+        $query = "INSERT INTO user (firstname,lastname,email,phone,country,dob,gender,pass,created) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssssss",$this->fullname,$this->email,$this->phone,$this->country,$this->password,$this->created);
+        $stmt->bind_param("sssssssss",$this->firstname,$this->lastname,$this->email,$this->phone,$this->country,$this->dob,$this->gender,$this->password,$this->created);
 
 
          // Sanitize
-         $this->fullname = htmlspecialchars(strip_tags($this->fullname));
+         $this->firstname = htmlspecialchars(strip_tags($this->firstname));
+         $this->lastname = htmlspecialchars(strip_tags($this->lastname));
          $this->email = htmlspecialchars(strip_tags($this->email));
          $this->phone = htmlspecialchars(strip_tags($this->phone));
          $this->country = htmlspecialchars(strip_tags($this->country));
          $this->password = htmlspecialchars(strip_tags($this->password));
          $this->created = htmlspecialchars(strip_tags($this->created));
+         $this->gender = htmlspecialchars(strip_tags($this->gender));
+         $this->dob = htmlspecialchars(strip_tags($this->dob));
+         
          $this->progress = 0;
 
          //execute query

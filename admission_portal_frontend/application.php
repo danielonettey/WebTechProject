@@ -396,6 +396,10 @@
 
 	//Lead to scholarship form page when clicked
 	$("#scholarship_btn").click(function () {
+		var firstname = $('#firstname').val();
+		$.post("", {sterm: myterm}, function(data){
+		$('#showhere').html(data);
+	}).done(function(){});
 		$("#personal_info").load("forms.html #scholarships_page", function () {
 			//Lead to family informationpage when clicked 
 			$("#family_info_btn").click(function () {
