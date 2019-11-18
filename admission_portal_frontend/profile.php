@@ -9,15 +9,10 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select-country.min.css" />
 
-
-	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -137,13 +132,28 @@
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Full Name</label>
+											<label class="col-md-12 control-label" for="name">First Name</label>
 											<div class="col-md-12">
 												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
 													class="form-control">
 											</div>
 										</div>
 									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Last Name</label>
+											<div class="col-md-12">
+												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									
+								</fieldset>
+							</div>
+
+							<div class="col-lg-12">
+								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Gender</label>
@@ -156,7 +166,15 @@
 											</div>
 										</div>
 									</div>
-									
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Date of Birth</label>
+											<div class="col-md-12">
+												<input id="dob" name="dob" type="date" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
 								</fieldset>
 							</div>
 
@@ -170,6 +188,7 @@
 													class="form-control">
 											</div>
 										</div>
+										
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -186,41 +205,17 @@
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Date of Birth</label>
-											<div class="col-md-12">
-												<input id="dob" name="dob" type="date" placeholder=""
-													class="form-control">
-											</div>
-										</div>
+										<label class="control-label" for="name" style="padding-bottom:10px;">Country</label>
+										<select class="selectpicker countrypicker form-control" data-flag="true" data-default="GH"></select>
 									</div>
 									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Country</label>
-											<div class="col-md-12">
-												<select class="form-control" name="country">
-													<option><?php echo $result[4] ?></option>
-													<option>Ghana</option>
-													<option>Canada</option>
-													<option>Congo</option>
-													<option>Many more</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="col-lg-12">
-										<div style="display: flex;justify-content: flex-end;width:100%;">
+										<div style="display: flex;justify-content: flex-end;width:100%;margin-top:10px;">
 											<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
 												style="margin-right: 10px;">
 												Update</button>
 										</div>
 									</div>
-								</div>
+								</fieldset>
 							</div>
 						</form>
 					</div>
@@ -319,6 +314,7 @@
 			});
 		};
 	</script>
+	<script src="js/bootstrap-select-country.min.js"></script>
 
 </body>
 

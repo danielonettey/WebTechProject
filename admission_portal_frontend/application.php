@@ -394,61 +394,14 @@
 <script>
 
 
-	//Lead to scholarship form page when clicked
-	$("#scholarship_btn").click(function () {
-		$("#personal_info").load("forms.html #scholarships_page", function () {
-			//Lead to family informationpage when clicked 
-			$("#family_info_btn").click(function () {
-				$("#personal_info").load("forms.html #family_info", function () {
-					//Lead to sponsor information page when clicked 
-					$("#sponsor_info_btn").click(function () {
-						$("#personal_info").load("forms.html #sponsor_info", function () {
-							//Lead to academic history page when clicked 
-							$("#academic_history_btn").click(function () {
-								$("#personal_info").load("forms.html #academic_history", function () {
-									//Lead to Extra curriculum page when clicked 
-									$("#extracurricular_btn").click(function () {
-										$("#personal_info").load("forms.html #extracurricular_info", function () {
-											//Lead to Travel information page when clicked 
-											$("#travel_info_btn").click(function () {
-												$("#personal_info").load("forms.html #travel_info", function () {
-													//Lead to Work Experience page when clicked 
-													$("#work_info_btn").click(function () {
-														$("#personal_info").load("forms.html #work_info", function () {
-															//Lead to Career Aspirations page when clicked 
-															$("#career_info_btn").click(function () {
-																$("#personal_info").load("forms.html #career_info", function () {
-																	//Lead to Examination Details page when clicked 
-																	$("#exam_info_btn").click(function () {
-																		$("#personal_info").load("forms.html #exam_info", function () {
-																			//Lead to Personal Essay page when clicked 
-																			$("#essay_info_btn").click(function () {
-																				$("#personal_info").load("forms.html #essay_info", function () {
-																					//Lead to Additional Information page when clicked 
-																					$("#additional_info_btn").click(function () {
-																						$("#personal_info").load("forms.html #additional_info", function () {});
-																					});
-																				});
-																			});
-																		});
-																	});
-																});
-															});
-														});
-													});
-												});
-											});
-										});
-									});
-								});
-							});
-						});
-					});
+		$("#scholarship_btn").click(function () {
+			$("#personal_info").load("forms.html #academic_history", function () {
+				//Lead to Extra curriculum page when clicked 
+				$("#extracurricular_btn").click(function () {
+					$("#personal_info").load("forms.html #exam_info", function () {});
 				});
 			});
-		}
-		)
-	});
+		});
 </script>
 
 </html>
