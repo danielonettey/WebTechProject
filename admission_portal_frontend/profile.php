@@ -209,7 +209,7 @@
 										<select class="selectpicker countrypicker form-control" data-flag="true" data-default="GH"></select>
 									</div>
 									<div class="col-lg-6">
-										<div style="display: flex;justify-content: flex-end;width:100%;margin-top:10px;">
+										<div style="display: flex;justify-content: flex-end;width:100%;margin-top:40px;">
 											<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
 												style="margin-right: 10px;">
 												Update</button>
