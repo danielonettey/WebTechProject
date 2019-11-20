@@ -67,7 +67,7 @@ function updateprofile($db,$id,$fullname,$email,$phone,$country){
     }
     $_SESSION['message'] = 'Task Updated Successfully';
     $_SESSION['message_type'] = 'warning';
-    header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
   
     }
 

@@ -5,6 +5,6 @@ session_unset();
 if(session_destroy()) // Destroying All Sessions
 {
 $_SESSION = array();
-header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php"); // Redirecting To Home Page
+header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/log_in.php"); // Redirecting To Home Page
 }
 ?>

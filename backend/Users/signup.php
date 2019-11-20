@@ -40,9 +40,9 @@ if($user->signup()){
     $user->insertPersonalInfo();
     $user->insertacademichistory();
     $user->insertAdditionalInfo();
-    header("Location: http://localhost/WebTechProject/admission_portal_frontend/");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
 }else{
-    header("Location: http://localhost/WebTechProject/admission_portal_frontend/register.php");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/register.php");
 }
 
 

@@ -24,23 +24,30 @@ function readall($db){
 include_once("../backend/mydatabase.php");
 include_once("../backend/objects/user.php");
 if (isset($_POST['updateprofile'])) {
-    $fullname = $_POST['fullname'];
+    $firstname = $_POST['fname'];
+    $lastname = $_POST['lname'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $country = $_POST['country'];
+    $dob = $_POST['dob'];
+    $gender = $_POST['gender'];
     $database_connection = new Database();
     $db = $database_connection->getconnecion();
     $id = $_GET['id'];
     //echo "hgg".$id;
-    updateprofile($db,$id,$fullname,$email,$phone,$country);
+    updateprofile($db,$id,$firstname,$lastname,$email,$phone,$country,$dob,$gender);
 }
 
-function updateprofile($db,$id,$fullname,$email,$phone,$country){
+function updateprofile($db,$id,$firstname,$lastname,$email,$phone,$country,$dob,$gender){
     $table_name = "user";
     $conn = $db;
     
-    if(!$fullname==""){
-        $query = "UPDATE " . $table_name . "  set fullname = '$fullname' WHERE studentId=  $id";
+    if(!$firstname==""){
+        $query = "UPDATE " . $table_name . "  set firstname = '$firstname' WHERE studentId=  $id";
+        $result = $conn->query($query);
+    }
+    if(!$lastname==""){
+        $query = "UPDATE " . $table_name . "  set lastname = '$lastname' WHERE studentId=  $id";
         $result = $conn->query($query);
     }
 
@@ -58,12 +65,20 @@ function updateprofile($db,$id,$fullname,$email,$phone,$country){
         $query = "UPDATE " . $table_name . "  set country= '$country' WHERE studentId=  $id";
         $result = $conn->query($query);
     }
+    if(!$dob==""){
+        $query = "UPDATE " . $table_name . "  set country= '$dob' WHERE studentId=  $id";
+        $result = $conn->query($query);
+    }
+    if(!$gender==""){
+        $query = "UPDATE " . $table_name . "  set gender= '$gender' WHERE studentId=  $id";
+        $result = $conn->query($query);
+    }
     if (!$result) {
         trigger_error('Invalid query: ' . $conn->error);
     }
     $_SESSION['message'] = 'Task Updated Successfully';
     $_SESSION['message_type'] = 'warning';
-    header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
   
     }
 ?>

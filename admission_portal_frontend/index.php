@@ -20,7 +20,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
+		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/log_in.php");
 		die();
 	}
 
@@ -109,7 +109,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Welcome Wuremu</h1>
+				<h1 class="page-header">Welcome <?php echo $result[1] ?></h1>
 			</div>
 		</div>
 

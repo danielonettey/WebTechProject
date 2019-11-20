@@ -23,7 +23,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
+		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/log_in.php");
 		die();
 	}
 	include_once("../backend/mydatabase.php");
@@ -130,7 +130,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">First Name</label>
 											<div class="col-md-12">
-												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
+												<input id="fname" name="fname" type="text" value="<?php echo $result[1] ?>"
 													class="form-control">
 											</div>
 										</div>
@@ -139,7 +139,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Last Name</label>
 											<div class="col-md-12">
-												<input id="fname" name="fullname" type="text" value="<?php echo $result[2] ?>"
+												<input id="lname" name="lname" type="text" value="<?php echo $result[2] ?>"
 													class="form-control">
 											</div>
 										</div>
@@ -154,7 +154,7 @@
 											<label class="col-md-12 control-label" for="name">Gender</label>
 											<div class="col-md-12">
 												<select class="form-control" name="gender">
-													<option></option>
+													<option><?php echo $result[7] ?></option>
 													<option>Male</option>
 													<option>Female</option>
 												</select>
@@ -188,7 +188,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Date of Birth</label>
 											<div class="col-md-12">
-												<input id="dob" name="dob" type="date" placeholder=""
+												<input id="dob" name="dob" value=<?php echo $result[6] ?> type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>

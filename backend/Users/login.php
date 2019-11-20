@@ -31,10 +31,10 @@ function userprofile(){
         $_SESSION['user_id']= $result[0];
         $GLOBALS['user_name'] = $result[1];
         
-        header("Location: http://localhost/WebTechProject/admission_portal_frontend/");
+        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
         
     }else{
-        header("Location: http://localhost/WebTechProject/admission_portal_frontend/");
+        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
     }
     
 
