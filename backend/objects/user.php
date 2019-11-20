@@ -96,6 +96,22 @@ class User{
 
     }
 
+
+    function insertAdditionalInfo(){
+        
+        //Query to insert user profile into databse
+        $query = "INSERT INTO additional_info (studentId,datecreated,progress,lastedited,appstatus) VALUES (?,?,?,?,?)";
+        $stmt2 = $this->conn->prepare($query);
+        $stmt2->bind_param("sssss",$this->studentId,$this->created,$this->progress,$this->created,$this->status);
+        if($stmt2->execute()){
+             return true;
+         }
+         return false;
+
+
+    }
+
+
     function insertPersonalInfo(){
 
     

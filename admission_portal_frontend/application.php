@@ -9,15 +9,8 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-
-
-	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 </head>
 <?php
 	session_start();
@@ -92,7 +85,7 @@
 						class="fa fa-info-circle">&nbsp;</em> About Us</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-comments">&nbsp;</em> FAQs</a></li>
-			<li class="active"><a href="contact.html"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
+			<li class="active"><a href="contact.php"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
 			<li><a href="log_in.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>
@@ -405,8 +398,6 @@
 
 </body>
 <script>
-
-
 		$("#scholarship_btn").click(function () {
 
 			var fname = $('#fname').val();

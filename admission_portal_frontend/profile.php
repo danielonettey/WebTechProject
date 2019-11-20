@@ -7,7 +7,6 @@
 	<title>My Profile - Ashesi Admission</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 
 
@@ -92,7 +91,7 @@
 						class="fa fa-info-circle">&nbsp;</em> About Us</a></li>
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-comments">&nbsp;</em> FAQs</a></li>
-			<li class="active"><a href="contact.html"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
+			<li class="active"><a href="contact.php"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
 			<li><a href="../backend/Users/logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>
@@ -211,10 +210,21 @@
 								</fieldset>
 							</div>
 
+<<<<<<< HEAD
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="col-lg-12">
 										<div style="display: flex;justify-content: flex-end;width:100%;">
+=======
+							<div class="col-lg-12">
+								<fieldset>
+									<div class="col-lg-6">
+										<label class="control-label" for="name" style="padding-bottom:10px;">Country</label>
+										<select class="selectpicker countrypicker form-control" data-flag="true" data-default="GH"></select>
+									</div>
+									<div class="col-lg-6">
+										<div style="display: flex;justify-content: flex-end;width:100%;margin-top:4	0px;">
+>>>>>>> 3f38ebdd1566cf2e291c7736fce28bade40a5d72
 											<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
 												style="margin-right: 10px;">
 												Update</button>
@@ -296,18 +306,13 @@
 						First Children</a></p>
 			</div>
 		</div>
-		<!--/.row-->
 	</div>
-	<!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
+<<<<<<< HEAD
 	<script>
 		window.onload = function () {
 			var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -319,6 +324,9 @@
 			});
 		};
 	</script>
+=======
+	<script src="js/bootstrap-select-country.min.js"></script>
+>>>>>>> 3f38ebdd1566cf2e291c7736fce28bade40a5d72
 
 </body>
 
