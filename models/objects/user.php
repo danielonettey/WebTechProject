@@ -1,4 +1,9 @@
 <?php
+/**
+ * user Class
+ *
+ * @version 0.1.0
+ */
 class User{
 
     //Database connection and table name
@@ -43,12 +48,20 @@ class User{
     
     public $essay = " ";
 
+    /**
+     * constructor to initialize database
+     */
     public function __construct($db){
         $this->conn = $db;
     }
     
 
     //signup user
+    /**
+     * @return bool
+     * signs user up by checking if they already exit
+     * If not account is created for users
+     */
     function signup(){
         if($this->isAlreadyExist()){
       

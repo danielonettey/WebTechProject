@@ -2,6 +2,8 @@
 /**
  * @author Emmanuel Antwi
  * @author Daniel Nettey
+ * @author Caleb Fianu
+ * @author Donal Awunyo
  * A moduel that handles the signup page
  */
 
@@ -35,6 +37,17 @@ if (isset($_POST['register_user'])){
 }
 
 //create the user and application
+/**
+ * signup by providing information
+ *
+ * @param Request $request Request
+ *
+ * Redirect users to login page
+ *
+ * @throws BadRequestHttpException
+ *
+ * @Rest\Post("/login")
+ */
 if($user->signup()){
     $user->applicant();
     $user->insertPersonalInfo();

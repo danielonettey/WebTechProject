@@ -1,8 +1,28 @@
 <?php
+/**
+ * @author Emmanuel Antwi
+ * @author Daniel Nettey
+ * @author Caleb Fianu
+ * @author Donald Awunyo
+ * A php file that instantiates a user during login. It also holds
+ * Information about the user>
+ * This information is displayed at user profile and updates are allowed.
+ */
 include_once("../mydatabase.php");
 include_once("../../models/objects/user.php");
 
 
+/**
+ * Login via email and password
+ *
+ * @param Request $request Request
+ *
+ * redirect users to index page.
+ *
+ * @throws BadRequestHttpException
+ *
+ * @Rest\Post("/login")
+ */
 function userprofile(){
         //Database connection
     $database_connection = new Database();
