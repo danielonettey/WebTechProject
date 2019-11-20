@@ -40,7 +40,7 @@ if($user->signup()){
     $user->insertPersonalInfo();
     $user->insertacademichistory();
     $user->insertAdditionalInfo();
-    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
 }else{
     header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/register.php");
 }
