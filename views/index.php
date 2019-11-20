@@ -20,12 +20,12 @@
 <?php
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/log_in.php");
+		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/log_in.php");
 		die();
 	}
 
-	include_once("../backend/mydatabase.php");
-	include_once('../backend/profilecrud.php'); 
+	include_once("../controller/mydatabase.php");
+	include_once('../controller/profilecrud.php'); 
 	
 
 	$database_connection = new Database();
@@ -89,7 +89,7 @@
 			<li class="active"><a href="https://www.ashesi.edu.gh/admissions/welcome.html"><em
 						class="fa fa-comments">&nbsp;</em> FAQs</a></li>
 			<li class="active"><a href="contact.php"><em class="fa fa-phone">&nbsp;</em> Contact Us</a></li>
-			<li><a href="../backend/Users/logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="../controller/Users/logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div>
 

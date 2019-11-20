@@ -21,9 +21,9 @@
 		die();
 	}
 
-	include_once("../backend/mydatabase.php");
-	include_once('../backend/profilecrud.php'); 
-	include_once("../backend/application.php");
+	include_once("../controller/mydatabase.php");
+	include_once('../controller/profilecrud.php'); 
+	include_once("../controller/application.php");
 	
 
 	$database_connection = new Database();

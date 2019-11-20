@@ -21,8 +21,8 @@ function readall($db){
     return $result;
 }
 
-include_once("../backend/mydatabase.php");
-include_once("../backend/objects/user.php");
+include_once("../mydatabase.php");
+include_once("../../models/objects/user.php");
 if (isset($_POST['updateprofile'])) {
 $fullname = $_POST['fullname'];
 $email = $_POST['email'];

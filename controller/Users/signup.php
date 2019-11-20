@@ -12,7 +12,7 @@
 
 
  //get user object
- include_once('../objects/user.php');
+ include_once('../../models/objects/user.php');
 
  //Instantiate database
  $database_connection = new Database();
@@ -42,7 +42,7 @@ if($user->signup()){
     $user->insertAdditionalInfo();
     header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
 }else{
-    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/register.php");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/register.php");
 }
 
 

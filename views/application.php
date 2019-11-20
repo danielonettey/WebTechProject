@@ -16,13 +16,13 @@
 <?php
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/log_in.php");
+		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/log_in.php");
 		die();
 	}
 
-	include_once("../backend/mydatabase.php");
-	include_once('../backend/profilecrud.php'); 
-	include_once("../backend/application.php");
+	include_once("../controller/mydatabase.php");
+	include_once('../controller/profilecrud.php'); 
+	include_once("../controller/application.php");
 	
 
 	$database_connection = new Database();
@@ -416,7 +416,7 @@
 			var message = $('#message').val();
 			
 
-			$.post("../backend/application.php", {message:message,disability:disability,major:major,live:live,appliedbefore:appliedbefore,fname:fname,lname:lname,email:email,gender:gender,phone:phone,ophone:ophone,dob:dob,citizen:citizen,city:city,fcity:fcity}, function(data){
+			$.post("../controller/application.php", {message:message,disability:disability,major:major,live:live,appliedbefore:appliedbefore,fname:fname,lname:lname,email:email,gender:gender,phone:phone,ophone:ophone,dob:dob,citizen:citizen,city:city,fcity:fcity}, function(data){
 				
 	});
 	
@@ -434,7 +434,7 @@
 				var hpemail = $('#hpemail').val();
 
 				
-			$.post("../backend/application.php", {hpemail:hpemail,hpname:hpname,hedate:hedate,hsdate:hsdate,university:university,country:country,usdate:usdate,uedate:uedate,highschool:highschool}, function(data){
+			$.post("../controller/application.php", {hpemail:hpemail,hpname:hpname,hedate:hedate,hsdate:hsdate,university:university,country:country,usdate:usdate,uedate:uedate,highschool:highschool}, function(data){
 				
 			});
 				$("#personal_info").load("forms.php #exam_info", function () {
@@ -447,7 +447,7 @@
 					var essay = $('#essay').val();
 
 									
-			$.post("../backend/application.php", {ename: ename, center:center, inumber: inumber, edate:edate, essay:essay}, function(data){
+			$.post("../controller/application.php", {ename: ename, center:center, inumber: inumber, edate:edate, essay:essay}, function(data){
 				
 				});
 		

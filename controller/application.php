@@ -1,13 +1,13 @@
 <?php
-include_once("../backend/mydatabase.php");
-include_once("../backend/objects/user.php");
+include_once("./mydatabase.php");
+include_once("../models/objects/user.php");
 
 $id = 1;
 $database_connection = new Database();
 $db = $database_connection->getconnecion();
 
 if (isset($_POST['fname'] )){
-echo "hhfghfgfgfg";
+
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];

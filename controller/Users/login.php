@@ -1,7 +1,6 @@
 <?php
 include_once("../mydatabase.php");
-include_once("../objects/user.php");
-
+include_once("../../models/objects/user.php");
 
 
 function userprofile(){
@@ -31,10 +30,10 @@ function userprofile(){
         $_SESSION['user_id']= $result[0];
         $GLOBALS['user_name'] = $result[1];
         
-        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
+        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
         
     }else{
-        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
+        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
     }
     
 

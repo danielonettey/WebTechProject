@@ -20,9 +20,9 @@ function readall($db){
         $result = $result->fetch_array();
         return $result;
 }
+include_once("./mydatabase.php");
+include_once("../models/objects/user.php");
 
-include_once("../backend/mydatabase.php");
-include_once("../backend/objects/user.php");
 if (isset($_POST['updateprofile'])) {
     $firstname = $_POST['fname'];
     $lastname = $_POST['lname'];
@@ -78,7 +78,7 @@ function updateprofile($db,$id,$firstname,$lastname,$email,$phone,$country,$dob,
     }
     $_SESSION['message'] = 'Task Updated Successfully';
     $_SESSION['message_type'] = 'warning';
-    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views");
   
     }
 ?>

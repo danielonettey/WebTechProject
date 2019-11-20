@@ -78,7 +78,7 @@ class User{
          if($stmt->execute()){
             $result = $this->login();
             $aa = $result->fetch_array();
-            echo "fchgcghg".$aa[0];
+
            $this->studentId = $aa[0];
              return true;
          }
@@ -128,10 +128,10 @@ class User{
         $stmt->bind_param("ssssssssssssssss",$this->studentId,$this->firstname,$this->lastname,$this->email,$this->gender,$this->phone,$this->otherphone,$this->dob,$this->citizen,$this->city,$this->address,$this->living,$this->applybefore,$this->major,$this->disability,$this->message);
         
         if ($stmt->execute()){
-            echo "DOne";
+            return true;
         }else{
             trigger_error('Invalid query: ' . $this->conn->error);
-            echo "Not done";
+            return false;
         }
     
     }
@@ -145,10 +145,10 @@ class User{
         $stmt->bind_param("ssssssssss",$this->studentId,$this->university,$this->country,$this->dob,$this->dob,$this->highschool,$this->dob,$this->dob,$this->hpname,$this->hpemail);
 
         if ($stmt->execute()){
-            echo "DOne inserting";
+            return true;
         }else{
             trigger_error('Invalid query: ' . $this->conn->error);
-            echo "Not done at all";
+            return false;
         }
 
 
