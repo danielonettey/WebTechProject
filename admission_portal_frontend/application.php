@@ -8,6 +8,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select-country.min.css" />
 	<link href="css/styles.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">
@@ -66,7 +67,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="img/caleb.jpg" class="img-responsive" alt="">
+				<img src="img/admin.png" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name"><?php echo $result1[1] ?></div>
@@ -201,16 +202,11 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Citizenship</label>
 												<div class="col-md-12">
-													<select id="citizen" class="form-control" >
-														<option><?php echo $result[8] ?></option>
-														<option>Ghana</option>
-														<option>Canada</option>
-														<option>Congo</option>
-														<option>Many more</option>
-													</select>
+												<select class="selectpicker countrypicker form-control" name="country" data-default="GH" ></select>
 												</div>
 											</div>
 										</div>
+										
 									</fieldset>
 								</div>
 
@@ -393,10 +389,13 @@
 	<!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap-select-country.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/custom.js"></script>
+    
 
 </body>
+<script src="js/bootstrap-select-country.min.js"></script>
 <script>
 		$("#scholarship_btn").click(function () {
 
@@ -422,7 +421,7 @@
 	});
 	
 			$("#personal_info").load("forms.php #academic_history", function () {
-
+				$.getScript("js/bootstrap-select-country.min.js");
 				$("#extracurricular_btn").click(function () {
 				var university =  $('#sname').val();
 				var country = $('#scountry').val();
@@ -462,5 +461,4 @@
 		});
 	
 </script>
-
 </html>

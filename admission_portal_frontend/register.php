@@ -20,7 +20,6 @@
     <div class="limiter">
         <div class="container-login100">
           
-
             <div class="wrap-login100 strechh p-l-50 p-r-50 p-t-72 p-b-50" style="padding-bottom: 40px; padding-top:40px;">
 
                 <!--Form for signup page -->
@@ -31,14 +30,14 @@
                     <div class="container_fluid" style="width: 100%;">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
+                                <div class="wrap-input100 validate-input" data-validate="Valid First Name is required" style="padding-left:">
                                     <span class="label-input100">First Name</span>
                                     <input class="input100" type="text" name="fname" placeholder="">
                                     <span class="focus-input100"></span>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="wrap-input100 validate-input" data-validate="Last Name is required">
+                                <div class="wrap-input100 validate-input" data-validate="Valid Last Name is required">
                                     <span class="label-input100">Last Name</span>
                                     <input class="input100" type="text" name="lname" placeholder="">
                                     <span class="focus-input100"></span>
@@ -47,7 +46,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
+                                <div class="wrap-input100 validate-input" data-validate="Gender is required" style="padding-left:">
                                     <span class="label-input100">Gender</span>
                                     <select class="input100" name= "gender" style="border: 0;">
                                         <option>Male</option>
@@ -58,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="wrap-input100 validate-input" data-validate="First Name is required">
+                                <div class="wrap-input100 validate-input" data-validate="Valid date of birth is required">
                                     <span class="label-input100">Date of Birth</span>
                                     <input class="input100" type="date" name="dob" placeholder="">
                                     <span class="focus-input100"></span>
@@ -74,7 +73,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="wrap-input100 validate-input" data-validate="Telephone is required">
+                                <div class="wrap-input100 validate-input" data-validate="Valid telelephone is required">
                                     <span class="label-input100">Mobile phone</span>
                                     <input class="input100" type="tel" name="phone" placeholder="">
                                     <span class="focus-input100"></span>
@@ -92,7 +91,7 @@
                         </div>  
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                <div class="wrap-input100 validate-input" data-validate="Password is required (at least one digit, lowercase, uppercase and 8 characters)">
                                     <span class="label-input100">Password</span>
                                     <input class="input100" type="password" name="password" placeholder="*************">
                                     <span class="focus-input100"></span>

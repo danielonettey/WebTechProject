@@ -69,7 +69,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="img/caleb.jpg" class="img-responsive" alt="">
+				<img src="img/admin.png" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name"><?php echo $result[1] ?></div>
@@ -129,17 +129,16 @@
 									<h3><?php echo $result[1] ?></h3>
 								</div>
 								<div class="col-sm-6" style="text-align: right;">
-									<h3>20%</h3>
+									<h3>50%</h3>
 								</div>
 							</div>
 							<div class="progress">
-								<div data-percentage="0%" style="width: 20%;" class="progress-bar progress-bar-blue"
+								<div data-percentage="0%" style="width: 50%;" class="progress-bar progress-bar-blue"
 									role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 							<div class="row" style="margin-top: 60px;">
 								<div class="col-md-12 buttonCont">
 									<a href="application.php">Start New Application</a>
-									<a href="application.php">Continue Application</a>
 								</div>
 							</div>
 						</div>

@@ -51,7 +51,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="img/caleb.jpg" class="img-responsive" alt="">
+				<img src="img/admin.png" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name">Wuremu</div>
