@@ -148,7 +148,7 @@
 											<label class="col-md-12 control-label" for="name">Gender</label>
 											<div class="col-md-12">
 												<select class="form-control" name="gender">
-													<option>Select a gender</option>
+													<option><?php echo $result[1] ?></option>
 													<option>Male</option>
 													<option>Female</option>
 												</select>
@@ -210,12 +210,6 @@
 								</fieldset>
 							</div>
 
-<<<<<<< HEAD
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="col-lg-12">
-										<div style="display: flex;justify-content: flex-end;width:100%;">
-=======
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
@@ -224,7 +218,6 @@
 									</div>
 									<div class="col-lg-6">
 										<div style="display: flex;justify-content: flex-end;width:100%;margin-top:4	0px;">
->>>>>>> 3f38ebdd1566cf2e291c7736fce28bade40a5d72
 											<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
 												style="margin-right: 10px;">
 												Update</button>
@@ -312,21 +305,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
-<<<<<<< HEAD
-	<script>
-		window.onload = function () {
-			var chart1 = document.getElementById("line-chart").getContext("2d");
-			window.myLine = new Chart(chart1).Line(lineChartData, {
-				responsive: true,
-				scaleLineColor: "rgba(0,0,0,.2)",
-				scaleGridLineColor: "rgba(0,0,0,.05)",
-				scaleFontColor: "#c5c7cc"
-			});
-		};
-	</script>
-=======
 	<script src="js/bootstrap-select-country.min.js"></script>
->>>>>>> 3f38ebdd1566cf2e291c7736fce28bade40a5d72
 
 </body>
 
