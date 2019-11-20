@@ -1,8 +1,9 @@
 <?php
 include_once("./mydatabase.php");
 include_once("../models/objects/user.php");
+include_once("../controller/Users/login.php");
 
-$id = 1;
+$id = $result[0];
 $database_connection = new Database();
 $db = $database_connection->getconnecion();
 
