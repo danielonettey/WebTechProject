@@ -72,7 +72,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="img/caleb.jpg" class="img-responsive" alt="">
+				<img src="img/admin.png" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name"><?php echo $result[1] ?></div>
@@ -123,20 +123,12 @@
 						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em
 								class="fa fa-toggle-up"></em></span></div>
 					<div class="panel-body">
-						<div class="picture">
-							<img src="img/caleb.jpg" class="img-responsive" class="img-fluid">
-							<div class="form-group" style="min-width: 50%;width: auto;">
-								<label style="font-size: 25px;font-weight: 400;">Change Picture</label>
-								<input type="file">
-								<p class="help-block">File chosen should be .jpg, .png or .jpeg</p>
-							</div>
-						</div>
 						<form class="form-horizontal" action="../backend/profilecrud.php?id=<?php echo $result[0] ?>" method="POST">
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Full Name</label>
+											<label class="col-md-12 control-label" for="name">First Name</label>
 											<div class="col-md-12">
 												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
 													class="form-control">
@@ -145,65 +137,59 @@
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Last Name</label>
+											<div class="col-md-12">
+												<input id="fname" name="fullname" type="text" value="<?php echo $result[2] ?>"
+													class="form-control">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="col-lg-12">
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Gender</label>
 											<div class="col-md-12">
 												<select class="form-control" name="gender">
-													<option><?php echo $result[1] ?></option>
+													<option></option>
 													<option>Male</option>
 													<option>Female</option>
 												</select>
 											</div>
 										</div>
 									</div>
-									
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Email</label>
+											<div class="col-md-12">
+												<input id="email" name="email" type="email" value=<?php echo $result[3] ?>
+													class="form-control">
+											</div>
+										</div>
+									</div>
 								</fieldset>
 							</div>
 
 							<div class="col-lg-12">
 								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Email</label>
-											<div class="col-md-12">
-												<input id="email" name="email" type="email" value=<?php echo $result[2] ?>
-													class="form-control">
-											</div>
-										</div>
-									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Mobile Phone</label>
 											<div class="col-md-12">
 												<input id="phone" name="phone" type="tel"
-													value=<?php echo $result[3] ?>  class="form-control">
+													value=<?php echo $result[4] ?>  class="form-control">
 											</div>
 										</div>
 									</div>
-								</fieldset>
-							</div>
-
-							<div class="col-lg-12">
-								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Date of Birth</label>
 											<div class="col-md-12">
 												<input id="dob" name="dob" type="date" placeholder=""
 													class="form-control">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Country</label>
-											<div class="col-md-12">
-												<select class="form-control" name="country">
-													<option><?php echo $result[4] ?></option>
-													<option>Ghana</option>
-													<option>Canada</option>
-													<option>Congo</option>
-													<option>Many more</option>
-												</select>
 											</div>
 										</div>
 									</div>
@@ -216,14 +202,16 @@
 										<label class="control-label" for="name" style="padding-bottom:10px;">Country</label>
 										<select class="selectpicker countrypicker form-control" data-flag="true" data-default="GH"></select>
 									</div>
-									<div class="col-lg-6">
-										<div style="display: flex;justify-content: flex-end;width:100%;margin-top:4	0px;">
-											<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
-												style="margin-right: 10px;">
-												Update</button>
-										</div>
+								</fieldset>
+							</div>
+							<div class="col-lg-12">
+								<fieldset>
+									<div style="display: flex;justify-content: flex-end;width:100%;margin-top:4	0px;">
+										<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont"
+											style="margin-right: 10px;">
+											Update</button>
 									</div>
-								</div>
+								</fieldset>
 							</div>
 						</form>
 					</div>

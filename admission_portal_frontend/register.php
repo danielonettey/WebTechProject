@@ -49,18 +49,10 @@
                             <div class="col-lg-6">
                                 <div class="wrap-input100 validate-input" data-validate="First Name is required" style="padding-left:">
                                     <span class="label-input100">Gender</span>
-<<<<<<< HEAD
-                                    <select class="input100" name= "gender" style="border: 0;">
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                    </select>
-                                    <!-- <input class="input100" type="text" name="gender" placeholder=""> -->
-=======
                                     <select class="input100" style="border: 0;">
                                         <option>Male</options>
                                         <option>Female</options>
                                     </select>
->>>>>>> 3f38ebdd1566cf2e291c7736fce28bade40a5d72
                                     <span class="focus-input100"></span>
                                 </div>
                             </div>
