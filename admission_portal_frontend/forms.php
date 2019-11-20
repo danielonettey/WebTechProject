@@ -1145,7 +1145,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Type of Exams</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="ename" name="ename" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -1154,7 +1154,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Exams Center</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="center" name="center" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -1167,7 +1167,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Index Number</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="inumber" name="inumber" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -1176,7 +1176,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Exams Date</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="date" placeholder=""
+												<input id="edate" name="edate" type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -1214,8 +1214,9 @@
 								<fieldset>
 									<div class="col-lg-12">
 										<div class="form-group">
-											<label>Click here to upload your personal essay (.pdf)</label>
-											<input type="file">
+											<label>Enter personal essay</label>
+											<textarea class="form-control" id="essay" name="essay"
+													placeholder="" rows="8"></textarea>
 										</div>
 									</div>
 								</fieldset>

@@ -40,7 +40,7 @@ class User{
     public $exam_center = " ";
     public $index_number = " ";
     public $exam_date = " ";
-    public $exam_results = " ";
+    
     public $essay = " ";
 
     public function __construct($db){
@@ -106,13 +106,15 @@ class User{
     function insertAdditionalInfo(){
         
         //Query to insert user profile into databse
-        $query = "INSERT INTO exam_results_essay (studentId,type_exams,exam_center,index_number,exam_date,exam_results,essay) VALUES (?,?,?,?,?,?,?)";
+        $query = "INSERT INTO exam_results_essay (studentId,type_exams,exam_center,index_number,exam_date,essay) VALUES (?,?,?,?,?,?)";
         $stmt2 = $this->conn->prepare($query);
-        $stmt2->bind_param("sssssss",$this->studentId,$this->type_exams,$this->exam_center,$this->index_number,$this->exam_date,$this->exam_results,$this->essay);
-        if($stmt2->execute()){
-             return true;
-         }
-         return false;
+        $stmt2->bind_param("ssssss",$this->studentId,$this->type_exams,$this->exam_center,$this->index_number,$this->dob,$this->essay);
+        if ($stmt2->execute()){
+            return true;
+        }else{
+            trigger_error('Invalid query: ' . $this->conn->error);
+            return false;
+        }
 
 
     }

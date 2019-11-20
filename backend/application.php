@@ -42,6 +42,18 @@ if (isset($_POST['university'])){
 
 }
 
+if (isset($_POST['ename'])){
+    $type_exams = $_POST['ename'];
+    $exam_center = $_POST['center'];
+    $index_number = $_POST['inumber'];
+    $exam_date = $_POST['edate'];
+    $essay = $_POST['essay'];
+    
+    updateAcademicHistory($db,$id,$type_exams,$exam_center,$index_number,$exam_date,$essay);
+}
+
+
+
 function readpersonal($db){
     $table_name = "personal_information";
     $conn = $db;
@@ -59,6 +71,7 @@ function readpersonal($db){
     $result = $result->fetch_array();
     return $result;
 }
+
 function readhistory($db){
     $table_name = "academic_hist";
     $conn = $db;
@@ -78,6 +91,24 @@ function readhistory($db){
 }
 
 
+function readAdditionalInfo($db){
+    $table_name = "exam_results_essay";
+    $conn = $db;
+    $query = "SELECT *
+    FROM
+        " . $table_name . " 
+    WHERE
+        studentId='".$_SESSION['user_id']."'";
+
+    $result = $conn->query($query);
+    // execute query
+    if (!$result) {
+        trigger_error('Invalid query: ' . $conn->error);
+    }
+    $result = $result->fetch_array();
+    return $result;
+}
+
 function updatePersonalInfo($db,$id,$firstname,$lastname,$email,$gender,$phone,$otherphone,$dob,$citizen,$city,$address,$living,$applybefore,$disability,$major,$message){
 
     $conn = $db;
@@ -88,9 +119,24 @@ function updatePersonalInfo($db,$id,$firstname,$lastname,$email,$gender,$phone,$
         trigger_error('Invalid query: ' . $conn->error);
     }
   
+}
+
+
+
+function updateAcademicHistory($db,$id,$type_exams,$exam_center,$index_number,$exam_date,$essay){
+
+    $conn = $db;
+
+    $query = "UPDATE exam_results_essay set studentId = $id,type_exams= '$type_exams', exam_center = '$exam_center',index_number = '$index_number',exam_date = '$exam_date ',essay ='$essay'";
+    $result = $conn->query($query);
+    if (!$result) {
+        trigger_error('Invalid query: ' . $conn->error);
+    }
+  
 
 
 }
+
 
 
 function updateademichistory($db,$id,$university,$country,$usdate,$uedate,$highschool,$hsdate,$hedate,$hpname,$hpemail){

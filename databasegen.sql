@@ -90,42 +90,14 @@ CREATE TABLE `admissionsdatabase`.`academic_hist` (
     REFERENCES `admissionsdatabase`.`user` (`studentId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
-CREATE TABLE `admissionsdatabase`.`extra_curricular` (
-  `studentId` INT NOT NULL,
-  `name_activity` VARCHAR(65) NULL,
-  `start_date` DATE NULL,
-  `end_date` DATE NULL,
-  `position` LONGTEXT NULL,
-  PRIMARY KEY (`studentId`),
-  CONSTRAINT `studentanswer5`
-    FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-
-CREATE TABLE `admissionsdatabase`.`travel_info` (
-  `studentId` INT NOT NULL,
-  `country` VARCHAR(50) NULL,
-  `year` YEAR NULL,
-  `length` INT NULL,
-  `purpose` LONGTEXT NULL,
-  PRIMARY KEY (`studentId`),
-  CONSTRAINT `studentanswer6`
-    FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-
-
+    
 CREATE TABLE `admissionsdatabase`.`exam_results_essay` (
   `studentId` INT NOT NULL,
   `type_exams` VARCHAR(60) NULL,
   `exam_center` VARCHAR(45) NULL,
   `index_number` VARCHAR(45) NULL,
   `exam_date` DATE NULL,
-  `exam_results` VARCHAR(100) NULL,
-  `essay` VARCHAR(100) NULL,
+  `essay` longtext NULL,
   PRIMARY KEY (`studentId`),
   CONSTRAINT `studentanswer8`
     FOREIGN KEY (`studentId`)

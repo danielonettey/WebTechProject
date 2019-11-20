@@ -39,6 +39,7 @@ if($user->signup()){
     $user->applicant();
     $user->insertPersonalInfo();
     $user->insertacademichistory();
+    $user->insertAdditionalInfo();
     header("Location: http://localhost/WebTechProject/admission_portal_frontend/");
 }else{
     header("Location: http://localhost/WebTechProject/admission_portal_frontend/register.php");

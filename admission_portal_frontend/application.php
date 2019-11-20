@@ -415,11 +415,10 @@
 			var major = $('input[name=major]:checked').val();
 			var disability = $('input[name=disability]:checked').val();
 			var message = $('#message').val();
-			console.log(live)
-			console.log(major)
+			
 
 			$.post("../backend/application.php", {message:message,disability:disability,major:major,live:live,appliedbefore:appliedbefore,fname:fname,lname:lname,email:email,gender:gender,phone:phone,ophone:ophone,dob:dob,citizen:citizen,city:city,fcity:fcity}, function(data){
-				alert(data);
+				
 	});
 	
 			$("#personal_info").load("forms.php #academic_history", function () {
@@ -437,15 +436,29 @@
 
 				
 			$.post("../backend/application.php", {hpemail:hpemail,hpname:hpname,hedate:hedate,hsdate:hsdate,university:university,country:country,usdate:usdate,uedate:uedate,highschool:highschool}, function(data){
-				alert(data);
-	});
-});
-
-				//Lead to Extra curriculum page when clicked 
-				$("#extracurricular_btn").click(function () {
-					$("#personal_info").load("forms.php #exam_info", function () {});
-				});
+				
 			});
+				$("#personal_info").load("forms.php #exam_info", function () {
+					//Lead to Extra curriculum page when clicked 
+				$("#essay_info_btn").click(function () {
+					var ename = $('#ename').val();
+					var center = $('#center').val();
+					var inumber = $('#inumber').val();
+					var edate = $('#edate').val();
+					var essay = $('#essay').val();
+
+									
+			$.post("../backend/application.php", {ename: ename, center:center, inumber: inumber, edate:edate, essay:essay}, function(data){
+				
+				});
+		
+		});
+	});
+						
+				
+		});
+	});
+
 		});
 	
 </script>
