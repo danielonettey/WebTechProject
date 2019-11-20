@@ -37,6 +37,8 @@ if (isset($_POST['register_user'])){
 //create the user and application
 if($user->signup()){
     $user->applicant();
+    $user->insertPersonalInfo();
+    $user->insertacademichistory();
     header("Location: http://localhost/WebTechProject/admission_portal_frontend/");
 }else{
     header("Location: http://localhost/WebTechProject/admission_portal_frontend/register.php");

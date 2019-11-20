@@ -14,7 +14,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">
 </head>
+<?php
+	session_start();
+	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
+		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
+		die();
+	}
 
+	include_once("../backend/mydatabase.php");
+	include_once('../backend/profilecrud.php'); 
+	include_once("../backend/application.php");
+	
+
+	$database_connection = new Database();
+	$db = $database_connection->getconnecion();
+	
+
+	$result1 = readall($db);
+	$history = readhistory($db);
+	?>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
@@ -52,7 +70,7 @@
 				<img src="img/caleb.jpg" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Wuremu</div>
+				<div class="profile-usertitle-name"><?php echo $result1[1] ?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -554,40 +572,23 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Name of University</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="sname" name="sname" value="<?php echo $history[1] ?>" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Town of University</label>
-											<div class="col-md-12">
-												<input id="lname" name="lname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
+
 								</fieldset>
 							</div>
 							<div class="col-lg-12">
 								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Region/State/Province of
-												University</label>
-											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
+			
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Country</label>
 											<div class="col-md-12">
-												<select class="form-control">
-													<option>Select your Country</option>
+												<select id = "scountry" class="form-control" >
+													<option><?php echo $history[2] ?></option>
 													<option>Ghana</option>
 													<option>Canada</option>
 													<option>Congo</option>
@@ -605,7 +606,7 @@
 											<label class="col-md-12 control-label" for="name">Start Date of
 												University</label>
 											<div class="col-md-12">
-												<input id="lname" name="lname" type="date" placeholder=""
+												<input id="usdate" name="usdate" value="<?php echo $history[3] ?>" type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -615,7 +616,7 @@
 											<label class="col-md-12 control-label" for="name">End Date of
 												University</label>
 											<div class="col-md-12">
-												<input id="lname" name="lname" type="date" placeholder=""
+												<input id="uedate" name="uedate" value="<?php echo $history[4] ?>" type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -634,41 +635,23 @@
 											<label class="col-md-12 control-label" for="name">Name of High
 												School</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="hname" name="hname" value="<?php echo $history[5] ?>" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Town of High
-												School</label>
-											<div class="col-md-12">
-												<input id="lname" name="lname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
+
 								</fieldset>
 							</div>
 							<div class="col-lg-12">
 								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Region/State/Province of
-												High School</label>
-											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
+
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Start Date of High
 												School</label>
 											<div class="col-md-12">
-												<input id="lname" name="lname" type="date" placeholder=""
+												<input id="hsdate" name="hsdate" value="<?php echo $history[6] ?>" type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -682,24 +665,15 @@
 											<label class="col-md-12 control-label" for="name">End Date of High
 												School</label>
 											<div class="col-md-12">
-												<input id="lname" name="lname" type="date" placeholder=""
+												<input id="hedate" name="hedate" value="<?php echo $history[7] ?>" type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Certificate
-												Acquired</label>
-											<div class="col-md-12">
-												<input id="lname" name="lname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
+
 								</fieldset>
 							</div>
-							<div class="col-lg-12">
+							<!-- <div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -730,7 +704,7 @@
 										</div>
 									</div>
 								</fieldset>
-							</div>
+							</div> -->
 							<div class="col-lg-12">
 								<fieldset>
 									<div class="col-lg-6">
@@ -738,55 +712,17 @@
 											<label class="col-md-12 control-label" for="name">Name & Title of
 												Principal/Counsellor</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="hpname" name="hpname" value="<?php echo $history[8] ?>" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Address of
-												Principal/Counsellor</label>
-											<div class="col-md-12">
-												<input id="lname" name="lname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Email of
 												Principal/Counsellor</label>
 											<div class="col-md-12">
-												<input id="email" name="email" type="email" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Phone number of
-												Principal/Counsellor</label>
-											<div class="col-md-12">
-												<input id="phone" name="phone" type="tel" placeholder="Phone number"
-													class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Phone number of Contact
-												Person</label>
-											<div class="col-md-12">
-												<input id="phone" name="phone" type="tel" placeholder="Phone number"
+												<input id="hpemail" name="hpemail" value="<?php echo $history[9] ?>" type="email" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -794,169 +730,6 @@
 								</fieldset>
 							</div>
 
-							<!-- Basic School information -->
-
-							<div class="col-lg-12">
-								<div style="padding-left:15px;">
-									<h4>Most Recent Basic School</h4>
-									<p>List basic schools (primary and junior high) you have attended, starting with the
-										most recent:</p>
-								</div>
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Name of Basic
-												School</label>
-											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Is the basic school a
-												private school</label>
-											<div class="col-md-12">
-												<div class="radio">
-													<label>
-														<input type="radio" name="optionsRadios" id="optionsRadios1"
-															value="option1">Yes
-													</label>
-													<label>
-														<input type="radio" name="optionsRadios" id="optionsRadios3"
-															value="option2">No
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Town of Basic
-												School</label>
-											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Region/State/Province of
-												Basic School</label>
-											<div class="col-md-12">
-												<input id="lname" name="lname" type="text" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Country</label>
-											<div class="col-md-12">
-												<select class="form-control">
-													<option>Select your Country</option>
-													<option>Ghana</option>
-													<option>Canada</option>
-													<option>Congo</option>
-													<option>Many more</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Start date of Basic
-												School</label>
-											<div class="col-md-12">
-												<input id="sname" name="sname" type="date" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">End date of Basic
-												School</label>
-											<br>
-											<div class="col-md-12">
-												<input id="sname" name="sname" type="date" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Describe any scholastic
-												distinctions or honours you have won in the space below:</label>
-											<div class="col-md-12">
-												<textarea class="form-control" id="message" name="message"
-													placeholder="" rows="3"></textarea>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Have you ever been
-												dismissed or suspended from an academic institution?</label>
-											<div class="col-md-12">
-												<div class="radio">
-													<label>
-														<input type="radio" name="optionsRadios" id="optionsRadios1"
-															value="option1">Yes
-													</label>
-													<label>
-														<input type="radio" name="optionsRadios" id="optionsRadios3"
-															value="option2">No
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">If yes, provide the name
-												and location of the institution</label>
-											<div class="col-md-12">
-												<textarea class="form-control" id="message" name="message"
-													placeholder="Name - Location (City, Country)" rows="3"></textarea>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">If you answered yes to the
-												question above, explain the circumstances surrounding your dismissal or
-												suspension in a letter addressed to the Admissions Committee.</label>
-											<div class="col-md-12">
-												<textarea class="form-control" id="message" name="message"
-													placeholder="" rows="5"></textarea>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
 							<div class="col-lg-12">
 								<br>
 								<div style="display: flex;justify-content: flex-end;width:100%;">

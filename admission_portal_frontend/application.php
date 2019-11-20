@@ -25,6 +25,19 @@
 		header("Location: http://localhost/WebTechProject/admission_portal_frontend/log_in.php");
 		die();
 	}
+
+	include_once("../backend/mydatabase.php");
+	include_once('../backend/profilecrud.php'); 
+	include_once("../backend/application.php");
+	
+
+	$database_connection = new Database();
+	$db = $database_connection->getconnecion();
+	
+
+	$result1 = readall($db);
+	$result = readpersonal($db);
+	$history = readhistory($db);
 	?>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -63,7 +76,7 @@
 				<img src="img/caleb.jpg" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Wuremu</div>
+				<div class="profile-usertitle-name"><?php echo $result1[1] ?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -116,7 +129,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">First Name</label>
 												<div class="col-md-12">
-													<input id="fname" name="fname" type="text"
+													<input id="fname" name="fname" type="text" value="<?php echo $result[1] ?>"
 														placeholder="Your first name" class="form-control">
 												</div>
 											</div>
@@ -125,7 +138,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Last Name</label>
 												<div class="col-md-12">
-													<input id="lname" name="lname" type="text"
+													<input id="lname" name="lname" type="text" value="<?php echo $result[2] ?>"
 														placeholder="Your last name" class="form-control">
 												</div>
 											</div>
@@ -138,7 +151,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Email</label>
 												<div class="col-md-12">
-													<input id="email" name="email" type="email" placeholder="Your email"
+													<input id="email" name="email" type="email" value="<?php echo $result[3] ?>" placeholder="Your email"
 														class="form-control">
 												</div>
 											</div>
@@ -147,8 +160,8 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Gender</label>
 												<div class="col-md-12">
-													<select class="form-control">
-														<option>Select a gender</option>
+													<select id="gender" class="form-control" value="<?php echo $result[4] ?>">
+														<option><?php echo $result[4] ?></option>
 														<option>Male</option>
 														<option>Female</option>
 													</select>
@@ -163,7 +176,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Mobile Phone</label>
 												<div class="col-md-12">
-													<input id="phone" name="phone" type="tel"
+													<input id="phone" name="phone" type="tel" value="<?php echo $result[5] ?>"
 														placeholder="Your mobile phone" class="form-control">
 												</div>
 											</div>
@@ -173,7 +186,7 @@
 												<label class="col-md-12 control-label" for="name">Other Mobile
 													Phone</label>
 												<div class="col-md-12">
-													<input id="ophone" name="ophone" type="tel"
+													<input id="ophone" name="ophone" type="tel" value="<?php echo $result[6] ?>"
 														placeholder="Your mobile phone" class="form-control">
 												</div>
 											</div>
@@ -186,7 +199,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Date of Birth</label>
 												<div class="col-md-12">
-													<input id="dob" name="dob" type="date" placeholder=""
+													<input id="dob" name="dob" value="<?php echo $result[7] ?>" type="date" placeholder=""
 														class="form-control">
 												</div>
 											</div>
@@ -195,8 +208,8 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Citizenship</label>
 												<div class="col-md-12">
-													<select class="form-control">
-														<option>Select your Citizenship</option>
+													<select id="citizen" class="form-control" >
+														<option><?php echo $result[8] ?></option>
 														<option>Ghana</option>
 														<option>Canada</option>
 														<option>Congo</option>
@@ -214,7 +227,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">City</label>
 												<div class="col-md-12">
-													<input id="city" name="city" type="text" placeholder="Your city"
+													<input id="city" name="city" type="text" value="<?php echo $result[9] ?>" placeholder="Your city"
 														class="form-control">
 												</div>
 											</div>
@@ -224,7 +237,7 @@
 												<label class="col-md-12 control-label" for="name">Full Mailing
 													Address</label>
 												<div class="col-md-12">
-													<input id="city" name="city" type="text"
+													<input id="fcity" name="fcity" type="text" value="<?php echo $result[10] ?>"
 														placeholder="123 Abc, Town, Country" class="form-control">
 												</div>
 											</div>
@@ -241,16 +254,16 @@
 												<div class="col-md-12">
 													<div class="radio">
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios1"
-																value="option1">With parents
+															<input type="radio" name="live" id="live"
+																value="With parent" checked="checked">With parents
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios2"
-																value="option2">By yourself
+															<input type="radio" name="live" id="live"
+																value="By yourself">By yourself
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios3"
-																value="option3">In orphanage
+															<input type="radio" name="live" id="live"
+																value="In orphanage">In orphanage
 														</label>
 													</div>
 												</div>
@@ -265,12 +278,12 @@
 												<div class="col-md-12">
 													<div class="radio">
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios1"
-																value="option1">Yes
+															<input type="radio" name="appliedbefore1" id="appliedbefore1"
+																value="Yes" >Yes
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios3"
-																value="option2">No
+															<input type="radio" name="appliedbefore1" id="appliedbefore1"
+																value="No" checked="checked">No
 														</label>
 													</div>
 												</div>
@@ -288,28 +301,28 @@
 												<div class="col-md-12">
 													<div class="radio" style="flex-direction:column">
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios1"
-																value="option1">B.Sc. BUSINESS ADMINISTATION
+															<input type="radio" name="major" id="major"
+																value="B.Sc. BUSINESS ADMINISTATION" checked="checked">B.Sc. BUSINESS ADMINISTATION
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios2"
-																value="option2">B.Sc. MANAGEMENT INFORMATION SYSTEMS
+															<input type="radio" name="major" id="major"
+																value="B.Sc. MANAGEMENT INFORMATION SYSTEMS" required>B.Sc. MANAGEMENT INFORMATION SYSTEMS
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios3"
-																value="option3">B.Sc. COMPUTER SCIENCE
+															<input type="radio" name="major" id="major"
+																value="B.Sc. COMPUTER SCIENCE" required>B.Sc. COMPUTER SCIENCE
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios4"
-																value="option4">B.Sc. COMPUTER ENGINEERING
+															<input type="radio" name="major" id="major"
+																value="B.Sc. COMPUTER ENGINEERING" required>B.Sc. COMPUTER ENGINEERING
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios5"
-																value="option5">B.Sc. MECHANICAL ENGINEERING
+															<input type="radio" name="major" id="major"
+																value="B.Sc. MECHANICAL ENGINEERING" required>B.Sc. MECHANICAL ENGINEERING
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios6"
-																value="option6">B.Sc. ELECTRICAL/ELECTRONIC ENGINEERING
+															<input type="radio" name="major" id="major"
+																value="B.Sc. ELECTRICAL/ELECTRONIC ENGINEERING" required>B.Sc. ELECTRICAL/ELECTRONIC ENGINEERING
 														</label>
 													</div>
 												</div>
@@ -325,12 +338,12 @@
 												<div class="col-md-12">
 													<div class="radio">
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios1"
-																value="option1">Yes
+															<input type="radio" name="disability" id="disability"
+																value="Yes" >Yes
 														</label>
 														<label>
-															<input type="radio" name="optionsRadios" id="optionsRadios2"
-																value="option2">No
+															<input type="radio" name="disability" id="disability"
+																value="No" checked="checked">No
 														</label>
 													</div>
 												</div>
@@ -348,7 +361,7 @@
 												<div class="col-md-12">
 													<textarea class="form-control" id="message" name="message"
 														placeholder="Please enter your message here..."
-														rows="5"></textarea>
+														rows="5" ><?php echo $result[15] ?></textarea>
 												</div>
 											</div>
 										</div>
@@ -395,13 +408,55 @@
 
 
 		$("#scholarship_btn").click(function () {
-			$("#personal_info").load("forms.html #academic_history", function () {
+
+			var fname = $('#fname').val();
+			var lname = $('#lname').val();
+			var email = $('#email').val();
+			var gender = $('#gender').val();
+			var phone = $('#phone').val();
+			var ophone = $('#ophone').val();
+			var dob = $('#dob').val();
+			var citizen = $('#citizen').val();
+			var city = $('#city').val();
+			var fcity = $('#fcity').val();
+			var live = $('input[name=live]:checked').val();
+			var appliedbefore = $('input[name=appliedbefore1]:checked').val();
+			var major = $('input[name=major]:checked').val();
+			var disability = $('input[name=disability]:checked').val();
+			var message = $('#message').val();
+			console.log(live)
+			console.log(major)
+
+			$.post("../backend/application.php", {message:message,disability:disability,major:major,live:live,appliedbefore:appliedbefore,fname:fname,lname:lname,email:email,gender:gender,phone:phone,ophone:ophone,dob:dob,citizen:citizen,city:city,fcity:fcity}, function(data){
+				alert(data);
+	});
+	
+			$("#personal_info").load("forms.php #academic_history", function () {
+
+				$("#extracurricular_btn").click(function () {
+				var university =  $('#sname').val();
+				var country = $('#scountry').val();
+				var usdate =  $('#usdate').val();
+				var uedate = $('#uedate').val();
+				var highschool = $('#hname').val();
+				var hsdate = $('#hsdate').val();
+				var hedate = $('#hedate').val();
+				var hpname = $('#hpname').val();
+				var hpemail = $('#hpemail').val();
+
+				
+			$.post("../backend/application.php", {hpemail:hpemail,hpname:hpname,hedate:hedate,hsdate:hsdate,university:university,country:country,usdate:usdate,uedate:uedate,highschool:highschool}, function(data){
+				alert(data);
+	});
+});
+
 				//Lead to Extra curriculum page when clicked 
 				$("#extracurricular_btn").click(function () {
-					$("#personal_info").load("forms.html #exam_info", function () {});
+					$("#personal_info").load("forms.php #exam_info", function () {});
 				});
 			});
 		});
+	
 </script>
 
 </html>

@@ -1,101 +1,111 @@
 <?php
-
-	
-
-function readall($db){
-
-        $table_name = "user";
-        $conn = $db;
-        $query = "SELECT *
-        FROM
-            " . $table_name . " 
-        WHERE
-            studentId='".$_SESSION['user_id']."'";
-
-        $result = $conn->query($query);
-        // execute query
-        if (!$result) {
-            trigger_error('Invalid query: ' . $conn->error);
-        }
-        $result = $result->fetch_array();
-        return $result;
-}
-
 include_once("../backend/mydatabase.php");
 include_once("../backend/objects/user.php");
-if (isset($_POST['updateprofile'])) {
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $country = $_POST['country'];
-    $database_connection = new Database();
-    $db = $database_connection->getconnecion();
-    $id = $_GET['id'];
-    //echo "hgg".$id;
-    updateprofile($db,$id,$fullname,$email,$phone,$country);
+
+$id = 1;
+$database_connection = new Database();
+$db = $database_connection->getconnecion();
+
+if (isset($_POST['fname'] )){
+echo "hhfghfgfgfg";
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$gender = $_POST['gender'];
+$phone = $_POST['phone'];
+$ophone = $_POST['ophone'];
+$dob = $_POST['dob'];
+$citizen = $_POST['citizen'];
+$city = $_POST['city'];
+$fcity = $_POST['fcity'];
+$live = $_POST['live'];
+$appliedbefore = $_POST['appliedbefore'];
+$major = $_POST['major'];
+$disability = $_POST['disability'];
+$message = $_POST['message'];
+
+updatePersonalInfo($db,$id,$fname,$lname,$email,$gender,$phone,$ophone,$dob,$citizen,$city,$fcity,$live,$appliedbefore,$major,$disability,$message);
+
 }
 
-function updateprofile($db,$id,$fullname,$email,$phone,$country){
-    $table_name = "user";
+if (isset($_POST['university'])){
+    $university = $_POST['university'];
+    $country = $_POST['country'];
+    $usdate = $_POST['usdate'];
+    $uedate = $_POST['uedate'];
+    $highschool = $_POST['highschool'];
+    $hsdate = $_POST['hsdate'];
+    $hedate = $_POST['hedate'];
+    $hpname = $_POST['hpname'];
+    $hpemail = $_POST['hpemail'];
+    updateademichistory($db,$id,$university,$country,$usdate,$uedate,$highschool,$hsdate,$hedate,$hpname,$hpemail);
+
+}
+
+function readpersonal($db){
+    $table_name = "personal_information";
     $conn = $db;
-    
-    if(!$fullname==""){
-        $query = "UPDATE " . $table_name . "  set fullname = '$fullname' WHERE studentId=  $id";
-        $result = $conn->query($query);
-    }
+    $query = "SELECT *
+    FROM
+        " . $table_name . " 
+    WHERE
+        studentId='".$_SESSION['user_id']."'";
 
-    if(!$email==""){
-        $query = "UPDATE " . $table_name . "  set email = '$email' WHERE studentId=  $id";
-        $result = $conn->query($query);
-    }
-
-    if(!$phone==Null){
-        $query = "UPDATE " . $table_name . "  set phone = '$phone' WHERE studentId=  $id";
-        $result = $conn->query($query);
-    }
-
-    if(!$country==""){
-        $query = "UPDATE " . $table_name . "  set country= '$country' WHERE studentId=  $id";
-        $result = $conn->query($query);
-    }
+    $result = $conn->query($query);
+    // execute query
     if (!$result) {
         trigger_error('Invalid query: ' . $conn->error);
     }
-    $_SESSION['message'] = 'Task Updated Successfully';
-    $_SESSION['message_type'] = 'warning';
-    header("Location: http://localhost/web%20tech%20project/WebTechProject/admission_portal_frontend/");
-  
+    $result = $result->fetch_array();
+    return $result;
+}
+function readhistory($db){
+    $table_name = "academic_hist";
+    $conn = $db;
+    $query = "SELECT *
+    FROM
+        " . $table_name . " 
+    WHERE
+        studentId='".$_SESSION['user_id']."'";
+
+    $result = $conn->query($query);
+    // execute query
+    if (!$result) {
+        trigger_error('Invalid query: ' . $conn->error);
     }
+    $result = $result->fetch_array();
+    return $result;
+}
 
 
-function insertPersonalInfo($db,$firstname,$lastname,$email,$gender,$phone,$otherphone,$dob,$citizen,$city,$address,$living,$applybefore,$disability,$major){
-    $table_name = "user";
+function updatePersonalInfo($db,$id,$firstname,$lastname,$email,$gender,$phone,$otherphone,$dob,$citizen,$city,$address,$living,$applybefore,$disability,$major,$message){
+
     $conn = $db;
 
-    $query = "INSERT INTO user (firstname,lastname,email,gender,phone,otherphone,dob,citizen,city,address,living,applybefore,disability,major) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-    $stmt = $this->conn->prepare($query);
-    $stmt->bind_param("ssssssssssssss",$firstname,$lastname,$email,$gender,$phone,$otherphone,$dob,$citizen,$city,$address,$living,$applybefore,$disability,$major);
+    $query = "UPDATE personal_information set studentId = $id, first_name = '$firstname',last_name ='$lastname',email = '$email',gender ='$gender',phone_number1 = '$phone', phone_number2 = '$otherphone',date_of_birth = '$dob',citizenship = '$citizen',city = '$city',address1 = '$address',place_of_living = '$living',apply_before ='$applybefore',disability ='$major',Major='$disability',further_info= '$message'";
+    $result = $conn->query($query);
+    if (!$result) {
+        trigger_error('Invalid query: ' . $conn->error);
+    }
+  
 
 
-     // Sanitize
-    $firstname = htmlspecialchars(strip_tags($firstname));
-    $lastname = htmlspecialchars(strip_tags($lastname));
-    $email = htmlspecialchars(strip_tags($email));
-    $phone = htmlspecialchars(strip_tags($phone));
-    $gender = htmlspecialchars(strip_tags($gender));
-    $otherphone = htmlspecialchars(strip_tags($otherphone));
-    $dob = htmlspecialchars(strip_tags($dob));
-    $citizen = htmlspecialchars(strip_tags($citizen));
-    $city = htmlspecialchars(strip_tags($city));
-    $address = htmlspecialchars(strip_tags($address));
-    $living = htmlspecialchars(strip_tags($living));
-    $address = htmlspecialchars(strip_tags($address));
-    $applybefore = htmlspecialchars(strip_tags($applybefore));
-    $disability = htmlspecialchars(strip_tags($disability));
-    $major = htmlspecialchars(strip_tags($major));
-    $stmt->execute();
+}
+
+
+function updateademichistory($db,$id,$university,$country,$usdate,$uedate,$highschool,$hsdate,$hedate,$hpname,$hpemail){
+
+    $conn = $db;
+
+    $query = "UPDATE  academic_hist SET studentId = $id ,name_uni = '$university',country_uni = '$country',start_date_uni = '$usdate' ,end_date_uni = '$uedate' ,name_shs = '$highschool' ,start_date_shs = '$hsdate' ,end_date_shs ='$hedate',name_principal_shs = '$hpname' ,email_principal_shs = '$hpemail'";
+    $result = $conn->query($query);
+    if (!$result) {
+        trigger_error('Invalid query: ' . $conn->error);
+    }
 
 
 
 }
+
+
 ?>

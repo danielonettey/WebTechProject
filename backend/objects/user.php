@@ -19,6 +19,23 @@ class User{
     public $created;
     public $progress;
     public $status = "New Applicant";
+    public  $otherphone = " ";
+    public $citizen = " ";
+    public $city = " ";
+    public $address = " ";
+    public $living = " ";
+    public $applybefore = " ";
+    public $major= " ";
+    public $disability = " ";
+    public $message = " ";
+    public $university = " ";
+    public $usdate = " ";
+    public $uedate = " ";
+    public $highschool = " ";
+    public $hsdate = " ";
+    public $hedate= " ";
+    public $hpname= " ";
+    public $hpemail= " ";
 
     public function __construct($db){
         $this->conn = $db;
@@ -79,6 +96,41 @@ class User{
 
     }
 
+    function insertPersonalInfo(){
+
+    
+        $query = "INSERT INTO personal_information (studentId,first_name,last_name,email,gender,phone_number1,phone_number2,date_of_birth,citizenship,city,address1,place_of_living,apply_before,disability,Major,further_info) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssssssssssssssss",$this->studentId,$this->firstname,$this->lastname,$this->email,$this->gender,$this->phone,$this->otherphone,$this->dob,$this->citizen,$this->city,$this->address,$this->living,$this->applybefore,$this->major,$this->disability,$this->message);
+        
+        if ($stmt->execute()){
+            echo "DOne";
+        }else{
+            trigger_error('Invalid query: ' . $this->conn->error);
+            echo "Not done";
+        }
+    
+    }
+
+    
+    function insertacademichistory(){
+
+
+        $query = "INSERT INTO academic_hist (studentId,name_uni,country_uni,start_date_uni,end_date_uni,name_shs,start_date_shs,end_date_shs,name_principal_shs,email_principal_shs) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssssssssss",$this->studentId,$this->university,$this->country,$this->dob,$this->dob,$this->highschool,$this->dob,$this->dob,$this->hpname,$this->hpemail);
+
+        if ($stmt->execute()){
+            echo "DOne inserting";
+        }else{
+            trigger_error('Invalid query: ' . $this->conn->error);
+            echo "Not done at all";
+        }
+
+
+
+}
+
 
      // login user
      function login(){
@@ -110,7 +162,7 @@ class User{
             $ex->getMessage();
         }
         if($result->num_rows > 0){
-            
+            echo "User already exist";
             return true;
             
         }
