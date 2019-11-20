@@ -1454,7 +1454,7 @@
 									<button type="button" id="" class="btn btn-md btn-primary"
 										style="margin-right: 10px;">
 										Save</button>
-									<button type="submit" id="essay_info_btn" class="btn btn-md btn-primary">
+									<button type=" 	" id="essay_info_btn" class="btn btn-md btn-primary">
 										Submit</button>
 								</div>
 							</div>
