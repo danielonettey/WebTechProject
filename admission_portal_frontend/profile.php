@@ -8,10 +8,15 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-select-country.min.css" />
 
+
+	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 </head>
 
 <body>
@@ -131,49 +136,26 @@
 								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">First Name</label>
+											<label class="col-md-12 control-label" for="name">Full Name</label>
 											<div class="col-md-12">
 												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
 													class="form-control">
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Last Name</label>
-											<div class="col-md-12">
-												<input id="fname" name="fullname" type="text" value="<?php echo $result[1] ?>"
-													class="form-control">
-											</div>
-										</div>
-									</div>
-									
-								</fieldset>
-							</div>
-
-							<div class="col-lg-12">
-								<fieldset>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Gender</label>
 											<div class="col-md-12">
 												<select class="form-control" name="gender">
-													<option>Select a gender</option>
+													<option><?php echo $result[1] ?></option>
 													<option>Male</option>
 													<option>Female</option>
 												</select>
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Date of Birth</label>
-											<div class="col-md-12">
-												<input id="dob" name="dob" type="date" placeholder=""
-													class="form-control">
-											</div>
-										</div>
-									</div>
+									
 								</fieldset>
 							</div>
 
@@ -187,7 +169,6 @@
 													class="form-control">
 											</div>
 										</div>
-										
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -195,6 +176,34 @@
 											<div class="col-md-12">
 												<input id="phone" name="phone" type="tel"
 													value=<?php echo $result[3] ?>  class="form-control">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+
+							<div class="col-lg-12">
+								<fieldset>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Date of Birth</label>
+											<div class="col-md-12">
+												<input id="dob" name="dob" type="date" placeholder=""
+													class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="col-md-12 control-label" for="name">Country</label>
+											<div class="col-md-12">
+												<select class="form-control" name="country">
+													<option><?php echo $result[4] ?></option>
+													<option>Ghana</option>
+													<option>Canada</option>
+													<option>Congo</option>
+													<option>Many more</option>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -214,7 +223,7 @@
 												Update</button>
 										</div>
 									</div>
-								</fieldset>
+								</div>
 							</div>
 						</form>
 					</div>
