@@ -1,8 +1,7 @@
-drop database admissionsdatabase;
-CREATE DATABASE `admissionsdatabase`;
-use admissionsdatabase;
 
-CREATE TABLE `admissionsdatabase`.`user` (
+use webtech_fall2019_daniel_nettey;
+
+CREATE TABLE `webtech_fall2019_daniel_nettey`.`user` (
   `studentId` INT NOT NULL  AUTO_INCREMENT ,
   `firstname` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(45) NOT NULL,
@@ -16,7 +15,7 @@ CREATE TABLE `admissionsdatabase`.`user` (
   PRIMARY KEY (`studentId`));
 
 
-CREATE TABLE `admissionsdatabase`.`applicationdata` (
+CREATE TABLE `webtech_fall2019_daniel_nettey`.`applicationdata` (
   `applicantId` INT NOT NULL AUTO_INCREMENT,
   `studentId` INT NOT NULL,
   `datecreated` DATE NULL,
@@ -27,11 +26,11 @@ CREATE TABLE `admissionsdatabase`.`applicationdata` (
   INDEX `studentId_idx` (`studentId` ASC),
   CONSTRAINT `studentId`
     FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
+    REFERENCES `webtech_fall2019_daniel_nettey`.`user` (`studentId`)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
-CREATE TABLE `admissionsdatabase`.`personal_information` (
+CREATE TABLE `webtech_fall2019_daniel_nettey`.`personal_information` (
   `studentId` INT NOT NULL,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
@@ -51,14 +50,14 @@ CREATE TABLE `admissionsdatabase`.`personal_information` (
   PRIMARY KEY (`studentId`),
   CONSTRAINT `studentanswer`
     FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
+    REFERENCES `webtech_fall2019_daniel_nettey`.`user` (`studentId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 
 
-CREATE TABLE `admissionsdatabase`.`sponsor_info` (
+CREATE TABLE `webtech_fall2019_daniel_nettey`.`sponsor_info` (
   `studentId` INT NOT NULL,
   `name_org` VARCHAR(100) NULL,
   `name_person` VARCHAR(80) NULL,
@@ -68,12 +67,12 @@ CREATE TABLE `admissionsdatabase`.`sponsor_info` (
   PRIMARY KEY (`studentId`),
   CONSTRAINT `studentanswer3`
     FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
+    REFERENCES `webtech_fall2019_daniel_nettey`.`user` (`studentId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
-CREATE TABLE `admissionsdatabase`.`academic_hist` (
+CREATE TABLE `webtech_fall2019_daniel_nettey`.`academic_hist` (
   `studentId` INT NOT NULL,
   `name_uni` VARCHAR(100) NULL,
   `country_uni` VARCHAR(45) NULL,
@@ -87,11 +86,11 @@ CREATE TABLE `admissionsdatabase`.`academic_hist` (
   PRIMARY KEY (`studentId`),
   CONSTRAINT `studentanswer4`
     FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
+    REFERENCES `webtech_fall2019_daniel_nettey`.`user` (`studentId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
     
-CREATE TABLE `admissionsdatabase`.`exam_results_essay` (
+CREATE TABLE `webtech_fall2019_daniel_nettey`.`exam_results_essay` (
   `studentId` INT NOT NULL,
   `type_exams` VARCHAR(60) NULL,
   `exam_center` VARCHAR(45) NULL,
@@ -101,7 +100,7 @@ CREATE TABLE `admissionsdatabase`.`exam_results_essay` (
   PRIMARY KEY (`studentId`),
   CONSTRAINT `studentanswer8`
     FOREIGN KEY (`studentId`)
-    REFERENCES `admissionsdatabase`.`user` (`studentId`)
+    REFERENCES `webtech_fall2019_daniel_nettey`.`user` (`studentId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
