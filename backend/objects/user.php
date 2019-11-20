@@ -36,6 +36,12 @@ class User{
     public $hedate= " ";
     public $hpname= " ";
     public $hpemail= " ";
+    public $type_exams = " ";
+    public $exam_center = " ";
+    public $index_number = " ";
+    public $exam_date = " ";
+    public $exam_results = " ";
+    public $essay = " ";
 
     public function __construct($db){
         $this->conn = $db;
@@ -100,9 +106,9 @@ class User{
     function insertAdditionalInfo(){
         
         //Query to insert user profile into databse
-        $query = "INSERT INTO additional_info (studentId,datecreated,progress,lastedited,appstatus) VALUES (?,?,?,?,?)";
+        $query = "INSERT INTO exam_results_essay (studentId,type_exams,exam_center,index_number,exam_date,exam_results,essay) VALUES (?,?,?,?,?,?,?)";
         $stmt2 = $this->conn->prepare($query);
-        $stmt2->bind_param("sssss",$this->studentId,$this->created,$this->progress,$this->created,$this->status);
+        $stmt2->bind_param("sssssss",$this->studentId,$this->type_exams,$this->exam_center,$this->index_number,$this->exam_date,$this->exam_results,$this->essay);
         if($stmt2->execute()){
              return true;
          }
