@@ -20,7 +20,7 @@ function readall($db){
         $result = $result->fetch_array();
         return $result;
 }
-include_once("./mydatabase.php");
+include_once("../controller/mydatabase.php");
 include_once("../models/objects/user.php");
 
 if (isset($_POST['updateprofile'])) {

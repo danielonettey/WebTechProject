@@ -8,8 +8,8 @@
  * Information about the user>
  * This information is displayed at user profile and updates are allowed.
  */
-include_once("../mydatabase.php");
-include_once("../../models/objects/user.php");
+include_once("../controller/mydatabase.php");
+include_once("../models/objects/user.php");
 
 
 /**
@@ -38,28 +38,29 @@ function userprofile(){
         $user->email =   $_GET['email'];
         $user->password = base64_encode($_GET['password']);
         
-
-    }
-
-    $stmt = $user->login();
+        $stmt = $user->login();
     
 
-    if ($stmt->num_rows > 0){
-        $result = $stmt->fetch_array();
-        session_start();
-        $_SESSION['user_id']= $result[0];
-        $GLOBALS['user_name'] = $result[1];
+        if ($stmt->num_rows > 0){
+            $result = $stmt->fetch_array();
+            session_start();
+            $_SESSION['user_id']= $result[0];
+            $GLOBALS['user_name'] = $result[1];
+            return $result;
+            
+            header("Location:  http://localhost/WebTechProject1/views/");
+            
+        }else{
+            header("Location:  http://localhost/WebTechProject1/views/");
+        }
         
-        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
-        
-    }else{
-        header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
-    }
     
+    }
 
+   
 }
 
-userprofile()
+$result = userprofile()
 
 
 ?>
