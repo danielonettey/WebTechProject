@@ -22,11 +22,11 @@ class Database
               $this->connection = new mysqli($this->servername,$this->username,$this->password,$this->dbname);
 
               // Check connection
-              if($this->connection->connect_error){
-                  error_log("Database not created " . $this->connection->connect_error);
-              }else{
-                  echo("Database connected" .' </br> ');
-              }
+            //   if($this->connection->connect_error){
+            //       error_log("Database not created " . $this->connection->connect_error);
+            //   }else{
+            //       echo("Database connected" .' </br> ');
+            //   }
             return $this->connection;
         }
 
