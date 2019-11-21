@@ -7,10 +7,10 @@
 class Database 
 {
         //database connection variables
-        private  $servername = "localhost";
-        private  $username = "root";
-        private  $password = ",./5mm1nu5l15";
-        private  $dbname = "admissionsdatabase";
+        private  $servername = "cs.ashesi.edu.gh";
+        private  $username = "daniel_nettey";
+        private  $password = "daniel_nettey";
+        private  $dbname = "webtech_fall2019_daniel_nettey";
         public $connection = null;
     /**
      * A constructed to creates a database connection 
