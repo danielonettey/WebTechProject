@@ -288,7 +288,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default" style="padding-bottom: 30px;">
 					<div class="panel-body">
-						<form class="form-horizontal" action="" method="post">
+						<form class="form-horizontal" action="../controller/application.php" method="POST">
 							<div class="col-lg-12">
 								<h3 style="padding-left: 15px;">Examination Results </h3>
 								<fieldset>
@@ -365,8 +365,10 @@
 								<fieldset>
 									<div class="col-lg-12">
 										<div class="form-group">
-											<label>Click here to upload your personal essay (.pdf)</label>
-											<input type="file">
+											<label>Input your personal essay</label>
+											<textarea class="form-control" id="message" name="message"
+														placeholder=""
+														rows="9" ><?php echo $result[15] ?></textarea>
 										</div>
 									</div>
 								</fieldset>
@@ -378,7 +380,7 @@
 									<button type="button" id="" class="btn btn-md btn-primary"
 										style="margin-right: 10px;">
 										Save</button>
-									<button type=" 	" id="essay_info_btn" class="btn btn-md btn-primary">
+									<button id="essay_info_btn" name= "essay_info_btn" class="btn btn-md btn-primary">
 										Submit</button>
 								</div>
 							</div>

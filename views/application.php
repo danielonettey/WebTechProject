@@ -14,9 +14,10 @@
 		rel="stylesheet">
 </head>
 <?php
+	
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/log_in.php");
+		header("Location:  http://localhost/WebTechProject1/views/log_in.php");
 		die();
 	}
 
@@ -34,6 +35,7 @@
 	$history = readhistory($db);
 	?>
 <body>
+	
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -445,12 +447,15 @@
 					var inumber = $('#inumber').val();
 					var edate = $('#edate').val();
 					var essay = $('#essay').val();
+				
 
 									
-			$.post("../controller/application.php", {ename: ename, center:center, inumber: inumber, edate:edate, essay:essay}, function(data){
+			//$.post("../controller/application.php", {ename: ename, center:center, inumber: inumber, edate:edate, essay:essay}, function(data){
 				
-				});
-		
+				//});
+				
+				//$("#personal_info").load("forms.php #success_alert",function(){});
+				
 		});
 	});
 						

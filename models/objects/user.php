@@ -199,7 +199,7 @@ class User{
             $ex->getMessage();
         }
         if($result->num_rows > 0){
-            echo "User already exist";
+            //echo "User already exist";
             return true;
             
         }

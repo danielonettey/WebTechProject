@@ -43,7 +43,7 @@ if (isset($_POST['university'])){
 
 }
 
-if (isset($_POST['ename'])){
+if (isset($_POST['essay_info_btn'])){
     $type_exams = $_POST['ename'];
     $exam_center = $_POST['center'];
     $index_number = $_POST['inumber'];
@@ -51,6 +51,8 @@ if (isset($_POST['ename'])){
     $essay = $_POST['essay'];
     
     updateAcademicHistory($db,$id,$type_exams,$exam_center,$index_number,$exam_date,$essay);
+
+    header("Location:  http://localhost/WebTechProject1/views/success.php");
 }
 
 
