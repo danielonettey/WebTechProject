@@ -32,6 +32,7 @@
 
 	$result1 = readall($db);
 	$history = readhistory($db);
+	$essay = readAdditionalInfo($db);
 	?>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -296,7 +297,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Type of Exams</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="sname" name="sname" value="<?php echo $essay[1] ?>" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -305,7 +306,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Exams Center</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="scenter" value="<?php echo $essay[2] ?>" name="scenter" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -318,7 +319,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Index Number</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="text" placeholder=""
+												<input id="inumber" name="inumber" value="<?php echo $essay[3] ?>" type="text" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -327,7 +328,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Exams Date</label>
 											<div class="col-md-12">
-												<input id="sname" name="sname" type="date" placeholder=""
+												<input id="edate" value="<?php echo $essay[4] ?>" name="edate" type="date" placeholder=""
 													class="form-control">
 											</div>
 										</div>
@@ -366,9 +367,9 @@
 									<div class="col-lg-12">
 										<div class="form-group">
 											<label>Input your personal essay</label>
-											<textarea class="form-control" id="message" name="message"
+											<textarea class="form-control" id="essay" name="essay"
 														placeholder=""
-														rows="9" ><?php echo $result[15] ?></textarea>
+														rows="9" ><?php echo $essay[5] ?></textarea>
 										</div>
 									</div>
 								</fieldset>

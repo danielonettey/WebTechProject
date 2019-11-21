@@ -8,8 +8,8 @@
  * Information about the user>
  * This information is displayed at user profile and updates are allowed.
  */
-include_once("../controller/mydatabase.php");
-include_once("../models/objects/user.php");
+include_once("../mydatabase.php");
+include_once("../../models/objects/user.php");
 
 
 /**
@@ -46,7 +46,7 @@ function userprofile(){
             session_start();
             $_SESSION['user_id']= $result[0];
             $GLOBALS['user_name'] = $result[1];
-            return $result;
+            
             
             header("Location:  http://localhost/WebTechProject1/views/");
             

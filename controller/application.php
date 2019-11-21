@@ -44,8 +44,8 @@ if (isset($_POST['university'])){
 }
 
 if (isset($_POST['essay_info_btn'])){
-    $type_exams = $_POST['ename'];
-    $exam_center = $_POST['center'];
+    $type_exams = $_POST['sname'];
+    $exam_center = $_POST['scenter'];
     $index_number = $_POST['inumber'];
     $exam_date = $_POST['edate'];
     $essay = $_POST['essay'];

@@ -33,6 +33,7 @@
 	$result1 = readall($db);
 	$result = readpersonal($db);
 	$history = readhistory($db);
+	$essay = readAdditionalInfo($db);
 	?>
 <body>
 	
