@@ -165,7 +165,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Email</label>
 											<div class="col-md-12">
-												<input id="email" name="email" type="email" value=<?php echo $result[3] ?>
+												<input id="email" name="email" type="email" value="<?php echo $result[3] ?>"
 													class="form-control">
 											</div>
 										</div>
@@ -180,7 +180,7 @@
 											<label class="col-md-12 control-label" for="name">Mobile Phone</label>
 											<div class="col-md-12">
 												<input id="phone" name="phone" type="tel"
-													value=<?php echo $result[4] ?>  class="form-control">
+													value= "<?php echo $result[4] ?>"  class="form-control">
 											</div>
 										</div>
 									</div>
@@ -218,69 +218,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default" style="padding-bottom: 30px;">
-					<div class="panel-heading">
-						Change Password
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em
-								class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<form class="form-horizontal" action="" method="post">
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="name">Current Password</label>
-											<div class="col-md-12">
-												<input id="pass" name="pass" type="password" placeholder="************"
-													class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="password">New Password</label>
-											<div class="col-md-12">
-												<input id="npass" name="npass" type="password"
-													placeholder="************" class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-
-							<div class="col-lg-12">
-								<fieldset>
-									<div class="col-lg-6">
-										<div class="form-group">
-											<label class="col-md-12 control-label" for="password">Re-type New
-												Password</label>
-											<div class="col-md-12">
-												<input id="rnpass" name="rnpass" type="password"
-													placeholder="************" class="form-control">
-											</div>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-							<div class="col-lg-6">
-								<div style="display: flex;justify-content: flex-end;width:100%;margin-top:10px;">
-									<button type="submit" name="updateprofile" class="btn btn-md btn-primary buttonCont">
-										Apply Changes</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div class="row">
 			<div class="col-sm-12">
 				<p class="back-link">Ashesi Admissions by <a href="https://nadeemsfirstchildren.wordpress.com">Nadeem's
