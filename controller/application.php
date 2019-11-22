@@ -1,9 +1,9 @@
 <?php
 include_once("../controller/mydatabase.php");
 include_once("../models/objects/user.php");
-include_once("../controller/Users/login.php");
 
-$id = $result[0];
+
+
 $database_connection = new Database();
 $db = $database_connection->getconnecion();
 
@@ -24,6 +24,7 @@ $appliedbefore = $_POST['appliedbefore'];
 $major = $_POST['major'];
 $disability = $_POST['disability'];
 $message = $_POST['message'];
+$id = $_GET['id'];
 
 updatePersonalInfo($db,$id,$fname,$lname,$email,$gender,$phone,$ophone,$dob,$citizen,$city,$fcity,$live,$appliedbefore,$major,$disability,$message);
 
@@ -39,6 +40,7 @@ if (isset($_POST['university'])){
     $hedate = $_POST['hedate'];
     $hpname = $_POST['hpname'];
     $hpemail = $_POST['hpemail'];
+    $id = $_GET['id'];
     updateademichistory($db,$id,$university,$country,$usdate,$uedate,$highschool,$hsdate,$hedate,$hpname,$hpemail);
 
 }
@@ -49,10 +51,10 @@ if (isset($_POST['essay_info_btn'])){
     $index_number = $_POST['inumber'];
     $exam_date = $_POST['edate'];
     $essay = $_POST['essay'];
-    
+    $id = $_GET['id'];
     updateAcademicHistory($db,$id,$type_exams,$exam_center,$index_number,$exam_date,$essay);
 
-    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/success.php");
+    header("Location:  http://localhost/WebTechProject1/views/success.php");
 }
 
 
@@ -116,9 +118,10 @@ function updatePersonalInfo($db,$id,$firstname,$lastname,$email,$gender,$phone,$
 
     $conn = $db;
 
-    $query = "UPDATE personal_information set studentId = $id, first_name = '$firstname',last_name ='$lastname',email = '$email',gender ='$gender',phone_number1 = '$phone', phone_number2 = '$otherphone',date_of_birth = '$dob',citizenship = '$citizen',city = '$city',address1 = '$address',place_of_living = '$living',apply_before ='$applybefore',disability ='$major',Major='$disability',further_info= '$message'";
+    $query = "UPDATE personal_information set first_name = '$firstname',last_name ='$lastname',email = '$email',gender ='$gender',phone_number1 = '$phone', phone_number2 = '$otherphone',date_of_birth = '$dob',citizenship = '$citizen',city = '$city',address1 = '$address',place_of_living = '$living',apply_before ='$applybefore',disability ='$major',Major='$disability',further_info= '$message' where studentId = $id";
     $result = $conn->query($query);
     if (!$result) {
+        echo $id;
         trigger_error('Invalid query: ' . $conn->error);
     }
   
@@ -130,7 +133,7 @@ function updateAcademicHistory($db,$id,$type_exams,$exam_center,$index_number,$e
 
     $conn = $db;
 
-    $query = "UPDATE exam_results_essay set studentId = $id,type_exams= '$type_exams', exam_center = '$exam_center',index_number = '$index_number',exam_date = '$exam_date ',essay ='$essay'";
+    $query = "UPDATE exam_results_essay set type_exams= '$type_exams', exam_center = '$exam_center',index_number = '$index_number',exam_date = '$exam_date ',essay ='$essay' where studentId = $id";
     $result = $conn->query($query);
     if (!$result) {
         trigger_error('Invalid query: ' . $conn->error);
@@ -146,7 +149,7 @@ function updateademichistory($db,$id,$university,$country,$usdate,$uedate,$highs
 
     $conn = $db;
 
-    $query = "UPDATE  academic_hist SET studentId = $id ,name_uni = '$university',country_uni = '$country',start_date_uni = '$usdate' ,end_date_uni = '$uedate' ,name_shs = '$highschool' ,start_date_shs = '$hsdate' ,end_date_shs ='$hedate',name_principal_shs = '$hpname' ,email_principal_shs = '$hpemail'";
+    $query = "UPDATE  academic_hist SET  name_uni = '$university',country_uni = '$country',start_date_uni = '$usdate' ,end_date_uni = '$uedate' ,name_shs = '$highschool' ,start_date_shs = '$hsdate' ,end_date_shs ='$hedate',name_principal_shs = '$hpname' ,email_principal_shs = '$hpemail' where studentId = $id";
     $result = $conn->query($query);
     if (!$result) {
         trigger_error('Invalid query: ' . $conn->error);

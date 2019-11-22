@@ -205,7 +205,7 @@
 											<div class="form-group">
 												<label class="col-md-12 control-label" for="name">Citizenship</label>
 												<div class="col-md-12">
-												<select class="selectpicker countrypicker form-control" name="country" data-default="GH" ></select>
+												<select class="selectpicker countrypicker form-control" id="citizen" name="citizen" name="country" data-default="GH" ></select>
 												</div>
 											</div>
 										</div>
@@ -419,7 +419,7 @@
 			var message = $('#message').val();
 			
 
-			$.post("../controller/application.php", {message:message,disability:disability,major:major,live:live,appliedbefore:appliedbefore,fname:fname,lname:lname,email:email,gender:gender,phone:phone,ophone:ophone,dob:dob,citizen:citizen,city:city,fcity:fcity}, function(data){
+			$.post("../controller/application.php?id=<?php echo $result[0] ?>", {message:message,disability:disability,major:major,live:live,appliedbefore:appliedbefore,fname:fname,lname:lname,email:email,gender:gender,phone:phone,ophone:ophone,dob:dob,citizen:citizen,city:city,fcity:fcity}, function(data){
 				
 	});
 	
@@ -437,7 +437,7 @@
 				var hpemail = $('#hpemail').val();
 
 				
-			$.post("../controller/application.php", {hpemail:hpemail,hpname:hpname,hedate:hedate,hsdate:hsdate,university:university,country:country,usdate:usdate,uedate:uedate,highschool:highschool}, function(data){
+			$.post("../controller/application.php?id=<?php echo $result[0] ?>", {hpemail:hpemail,hpname:hpname,hedate:hedate,hsdate:hsdate,university:university,country:country,usdate:usdate,uedate:uedate,highschool:highschool}, function(data){
 				
 			});
 				$("#personal_info").load("forms.php #exam_info", function () {

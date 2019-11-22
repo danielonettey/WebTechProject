@@ -17,7 +17,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/log_in.php");
+		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/log_in.php");
 		die();
 	}
 
@@ -139,7 +139,7 @@
 										<div class="form-group">
 											<label class="col-md-12 control-label" for="name">Country</label>
 											<div class="col-md-12">
-											<select class="selectpicker countrypicker form-control" id="country_uni" name="country_uni" data-default="GH" ></select>
+											<select class="selectpicker countrypicker form-control" id="scountry" name="scountry" data-default="GH" ></select>
 											</div>
 										</div>
 									</div>
@@ -289,7 +289,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default" style="padding-bottom: 30px;">
 					<div class="panel-body">
-						<form class="form-horizontal" action="../controller/application.php" method="POST">
+						<form class="form-horizontal" action="../controller/application.php?id=<?php echo $result1[0] ?>" method="POST">
 							<div class="col-lg-12">
 								<h3 style="padding-left: 15px;">Examination Results </h3>
 								<fieldset>
