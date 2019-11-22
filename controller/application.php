@@ -54,7 +54,7 @@ if (isset($_POST['essay_info_btn'])){
     $id = $_GET['id'];
     updateAcademicHistory($db,$id,$type_exams,$exam_center,$index_number,$exam_date,$essay);
 
-    header("Location:  http://localhost/WebTechProject1/views/success.php");
+    header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/success.php");
 }
 
 
