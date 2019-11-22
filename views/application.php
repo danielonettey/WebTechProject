@@ -17,7 +17,7 @@
 	
 	session_start();
 	if(empty($_SESSION['user_id']) || $_SESSION['user_id'] == ''){
-		header("Location:  http://localhost/WebTechProject1/views/log_in.php");
+		header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/log_in.php");
 		die();
 	}
 

@@ -48,10 +48,10 @@ function userprofile(){
             $GLOBALS['user_name'] = $result[1];
             
             
-            header("Location:  http://localhost/WebTechProject1/views/");
+            header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
             
         }else{
-            header("Location:  http://localhost/WebTechProject1/views/");
+            header("Location:  http://cs.ashesi.edu.gh/~daniel_nettey/WebTechProject/views/");
         }
         
     
